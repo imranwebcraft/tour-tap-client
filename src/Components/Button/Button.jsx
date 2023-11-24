@@ -15,7 +15,7 @@ const Button = ({ buttonText }) => {
 					scale: 0.9,
 				}}
 				transition={{ duration: 0.1 }}
-				className="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-300 text-center text-base font-medium shadow-md focus:outline-none rounded-lg"
+				className="py-2 px-4 bg-green-600 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white transition ease-in duration-300 text-center text-sm font-medium shadow-md focus:outline-none rounded-lg"
 			>
 				{buttonText}
 			</motion.button>
