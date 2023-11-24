@@ -5,6 +5,8 @@ import Community from '../Pages/Community/Community';
 import Blog from '../Pages/Blog/Blog';
 import AboutUs from '../Pages/AboutUs/AboutUs';
 import ContactUs from '../Pages/ContactUs/ContactUs';
+import Login from '../Pages/Login/Login';
+import Register from '../Pages/Register/Register';
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
 			{
 				path: 'contactUs',
 				element: <ContactUs></ContactUs>,
+			},
+			{
+				path: 'login',
+				element: <Login></Login>,
+			},
+			{
+				path: 'register',
+				element: <Register></Register>,
 			},
 		],
 	},

@@ -112,7 +112,6 @@ const Navbar = ({ screen, children, route }) => {
 							</button>
 							{/*      <!-- Navigation links --> */}
 							<ul
-								role="menubar"
 								aria-label="Select page"
 								className={`text-sm absolute top-0 left-0 z-[-1] h-[28.5rem] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${
 									isToggleOpen
@@ -198,7 +197,9 @@ const Navbar = ({ screen, children, route }) => {
 							</ul>
 							{/*      <!-- Actions --> */}
 							<div className="ml-auto flex gap-[2px] lg:gap-5 items-center justify-end px-6 lg:ml-0 lg:flex-1 lg:p-0">
-								<Button buttonText={'Login / Register'}></Button>
+								<Link to={'/login'}>
+									<Button buttonText={'Login / Register'}></Button>
+								</Link>
 								{/* Dark Model Toggole Icons */}
 								<button
 									onClick={toggoleTheme}
