@@ -6,7 +6,7 @@ import Button from '../../../../../Components/Button/Button';
 import './navbar.css';
 import PropTypes from 'prop-types';
 
-const Navbar = ({ screen, children }) => {
+const Navbar = ({ screen, children, route }) => {
 	const [isToggleOpen, setIsToggleOpen] = useState(false);
 
 	// Dark mode control
@@ -33,11 +33,36 @@ const Navbar = ({ screen, children }) => {
 		setTheme(currentTheme);
 	}, [html.classList]);
 
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			// Add a class when the user scrolls down
+			setIsScrolled(window.scrollY > 50);
+		};
+
+		// Attach the scroll event listener
+		window.addEventListener('scroll', handleScroll);
+
+		// Detach the event listener when the component unmounts
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
-		<div className={`bg-image ${screen ? 'h-screen' : 'h-[50vh]'}  relative`}>
-			<div className="relative z-20 w-full">
+		<div
+			className={`bg-image ${
+				screen ? 'h-screen' : 'h-[50vh]'
+			} ${route}-page relative `}
+		>
+			<div className="relative  z-20 w-full">
 				{/*<!-- Header --> */}
-				<header className=" max-w-[1250px] mx-auto after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:after:hidden">
+				<header
+					className={`sticky top-0 z-50 rounded-b-lg bg-slate-900 ${
+						isScrolled ? 'bg-opacity-75 backdrop-blur-md' : 'bg-opacity-0'
+					}  max-w-[1250px] mx-auto after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:after:hidden transition-all duration-500`}
+				>
 					<div className="relative lg:py-5 mx-auto w-full px-6 lg:px-3 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
 						<nav
 							aria-label="main navigation"
@@ -177,7 +202,7 @@ const Navbar = ({ screen, children }) => {
 								{/* Dark Model Toggole Icons */}
 								<button
 									onClick={toggoleTheme}
-									className=" hidden  group lg:inline-flex flex-shrink-0 justify-center items-center h-9 w-9 font-medium rounded-full text-gray-800 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 hover:cursor-pointer"
+									className=" hidden  group lg:inline-flex flex-shrink-0 justify-center items-center h-9 w-9 font-medium rounded-full text-gray-100 hover:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 hover:cursor-pointer"
 								>
 									{theme === 'light' ? (
 										<svg
@@ -207,7 +232,6 @@ const Navbar = ({ screen, children }) => {
 						</nav>
 					</div>
 				</header>
-				{/*<!-- End Navbar with Topbar--> */}
 
 				{/* Home banner */}
 				{children}

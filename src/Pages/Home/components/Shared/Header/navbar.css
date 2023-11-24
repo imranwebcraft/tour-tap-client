@@ -16,3 +16,8 @@
 		rgba(0, 0, 0, 0.4) 100%
 	);
 }
+
+/* Community page specific styles */
+.bg-image.community-page {
+	background-image: url('../../../../../assets/images/CommunityBanner.jpg');
+}

@@ -6,6 +6,7 @@ export default {
 		extend: {
 			fontFamily: {
 				primary: "'Open Sans', sans-serif",
+				secondary: "'Yesteryear', cursive",
 			},
 		},
 	},
