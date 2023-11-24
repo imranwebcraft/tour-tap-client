@@ -1,7 +1,11 @@
+import Navbar from '../Home/components/Shared/Header/Navbar';
+
 const ContactUs = () => {
 	return (
 		<div>
-			<h3>ContactUs</h3>
+			<Navbar screen={false} route="contact">
+				{/* Other content */}
+			</Navbar>
 		</div>
 	);
 };

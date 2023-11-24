@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 import Container from '../../../UI/Container';
 import Button from '../../../Components/Button/Button';
 const Banner = () => {
-	const animatedText = 'Explore the World with Tour-Tap';
+	const animatedText = 'Explore The World With Tour-Tap.';
 	return (
 		<Container>
 			<div className=" h-full flex flex-col justify-center items-center py-52 space-y-5">
 				{/* <span className=" text-center text-white bg-green-200 bg-opacity-50 max-w-xs rounded-md px-2 py-1">
                 Explore the wonderful Bangladesh!
             </span> */}
-				<h1 className="text-white text-6xl font-bold tracking-wider max-w-5xl text-center">
+				<h1 className="text-white text-6xl font-bold tracking-wide max-w-5xl text-center">
 					Welcome to Tour-Tap!
 				</h1>
 				<span className=" text-2xl font-black lg:text-6xl  bg-clip-text bg-gradient-to-tl from-green-500 to-sky-400 text-transparent">

@@ -1,7 +1,11 @@
+import Navbar from '../Home/components/Shared/Header/Navbar';
+
 const AboutUs = () => {
 	return (
 		<div>
-			<h3>AboutUs</h3>
+			<Navbar screen={false} route="about">
+				{/* Other content */}
+			</Navbar>
 		</div>
 	);
 };
