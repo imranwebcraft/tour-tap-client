@@ -27,7 +27,7 @@ const ContactUs = () => {
 							></iframe>
 							<div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
 								<div className="lg:w-1/2 px-6">
-									<h2 className="title-font font-bold  tracking-widest text-xs text-gray-9800">
+									<h2 className="title-font font-bold  tracking-widest text-xs text-gray-900">
 										ADDRESS
 									</h2>
 									<p className="mt-1">

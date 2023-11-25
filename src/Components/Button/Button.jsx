@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 const Button = ({ buttonText }) => {
@@ -21,9 +20,6 @@ const Button = ({ buttonText }) => {
 			</motion.button>
 		</div>
 	);
-};
-Button.propTypes = {
-	buttonText: PropTypes.array,
 };
 
 export default Button;

@@ -24,35 +24,11 @@ const NavbarSignle = () => {
 		}
 	};
 
-	useEffect(() => {
-		const currentTheme = localStorage.getItem('theme');
-		html.classList.add(currentTheme);
-		setTheme(currentTheme);
-	}, [html.classList]);
-
-	const [isScrolled, setIsScrolled] = useState(false);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			// Add a class when the user scrolls down
-			setIsScrolled(window.scrollY > 50);
-		};
-
-		// Attach the scroll event listener
-		window.addEventListener('scroll', handleScroll);
-
-		// Detach the event listener when the component unmounts
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
 	return (
-		<div>
+		<div className=" border-b relative">
 			{/*<!-- Header --> */}
 			<header
-				className={`sticky top-0 z-50 rounded-b-lg bg-slate-900 ${
-					isScrolled ? 'bg-opacity-75 backdrop-blur-md' : 'bg-opacity-0'
-				}  max-w-[1250px] mx-auto after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:after:hidden transition-all duration-500`}
+				className={`sticky top-0 z-50 max-w-[1250px] mx-auto after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:after:hidden transition-all duration-500`}
 			>
 				<div className="relative lg:py-5 mx-auto w-full px-6 lg:px-3 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
 					<nav
