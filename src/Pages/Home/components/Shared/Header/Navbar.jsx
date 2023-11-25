@@ -220,7 +220,7 @@ const Navbar = ({ screen, children, route }) => {
 											className=" relative hover:cursor-pointer"
 										>
 											<img
-												className=" h-[35px] rounded-full"
+												className=" h-[35px] w-[35px] rounded-full"
 												src={user?.photoURL}
 												alt="userProfile"
 											/>

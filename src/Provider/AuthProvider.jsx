@@ -57,6 +57,7 @@ const AuthProvider = ({ children }) => {
 	// ---------- OBSERVER -------//
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+			console.log('Observer', currentUser);
 			setLoading(true);
 			setUser(currentUser);
 			// TODO: Make set user false individually for every stage that will come later

@@ -28,8 +28,6 @@ const Register = () => {
 	} = useForm();
 	const onSubmit = async (data) => {
 		setLoading(true);
-		console.log(loading);
-		console.log(data);
 		// Image as form data
 		const formData = { image: data.image[0] };
 		const res = await axiosPublic.post(image_hosting_api, formData, {

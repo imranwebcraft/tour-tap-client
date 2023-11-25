@@ -1,6 +1,36 @@
+import useAuth from '../../../Hook/useAuth';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+
 const SocialLogin = () => {
+	// const axiosPublic = useAxiosPublic();
+	const { googleSignIn } = useAuth();
+	const navigate = useNavigate();
+
+	const handleGoogleSignIn = () => {
+		googleSignIn()
+			.then(() => {
+				toast.success('Google sign in successfull');
+				// TODO: Send userInfo to the database
+				// const userInfo = {
+				// 	name: result.user?.displayName,
+				// 	email: result.user?.email,
+				// };
+				// axiosPublic.post('/users', userInfo).then((res) => {
+				// 	console.log(res.data);
+				// });
+				navigate('/');
+			})
+			.catch((err) => {
+				console.log(err.message);
+				toast.error(err.message);
+			});
+	};
 	return (
-		<button className="flex w-full items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+		<button
+			onClick={handleGoogleSignIn}
+			className="flex w-full items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+		>
 			<div className="px-4 py-2">
 				{/* Google */}
 				<svg className="w-6 h-6" viewBox="0 0 40 40">
