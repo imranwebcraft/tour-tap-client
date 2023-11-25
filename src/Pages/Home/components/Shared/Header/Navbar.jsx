@@ -5,9 +5,13 @@ import Logo from '../../../../../Components/Logo';
 import Button from '../../../../../Components/Button/Button';
 import './navbar.css';
 import PropTypes from 'prop-types';
+import useAuth from '../../../../../Hook/useAuth';
 
 const Navbar = ({ screen, children, route }) => {
+	const [isOpen, setIsOpen] = useState(false);
 	const [isToggleOpen, setIsToggleOpen] = useState(false);
+	const { user } = useAuth();
+	console.log(user);
 
 	// Dark mode control
 	const [theme, setTheme] = useState('light');
@@ -197,9 +201,40 @@ const Navbar = ({ screen, children, route }) => {
 							</ul>
 							{/*      <!-- Actions --> */}
 							<div className="ml-auto flex gap-[2px] lg:gap-5 items-center justify-end px-6 lg:ml-0 lg:flex-1 lg:p-0">
-								<Link to={'/login'}>
-									<Button buttonText={'Login / Register'}></Button>
-								</Link>
+								{user ? (
+									<div className=" text-white text-sm relative">
+										<div
+											onClick={() => setIsOpen(!isOpen)}
+											className=" relative hover:cursor-pointer"
+										>
+											<img
+												className=" h-[35px] rounded-full"
+												src={user?.photoURL}
+												alt="userProfile"
+											/>
+										</div>
+
+										{isOpen && (
+											<div className=" bg-slate-900 bg-opacity-70 backdrop-blur-2xl px-4 py-5 flex flex-col gap-2 text-right absolute right-[0%] mt-5 rounded-lg">
+												<Link className=" underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-green-500 transition-colors duration-300 transform  hover:border-green-500">
+													Dashboard
+												</Link>
+												<Link className=" underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-green-500 transition-colors duration-300 transform  hover:border-green-500">
+													Offer Anniuncement
+												</Link>
+												<div className="bg-slate-950 px-4 py-3 rounded-md bg-opacity-20 backdrop-blur-xl space-y-1 hover:cursor-not-allowed">
+													<p>{user?.displayName}</p>
+													<p>{user?.email}</p>
+												</div>
+											</div>
+										)}
+									</div>
+								) : (
+									<Link to={'/login'}>
+										<Button buttonText={'Login / Register'}></Button>
+									</Link>
+								)}
+
 								{/* Dark Model Toggole Icons */}
 								<button
 									onClick={toggoleTheme}

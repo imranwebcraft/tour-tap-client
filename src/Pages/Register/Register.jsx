@@ -106,7 +106,9 @@ const Register = () => {
 									placeholder="Enter your name"
 								/>
 								{errors.name?.type === 'required' && (
-									<span className=" text-red-600">Name is required</span>
+									<span className=" text-red-600 text-sm">
+										Name is required*
+									</span>
 								)}
 							</div>
 							{/* -----------Email------------ */}
@@ -121,7 +123,9 @@ const Register = () => {
 									placeholder="Enter your email address"
 								/>
 								{errors.email?.type === 'required' && (
-									<span className=" text-red-600">Email is required</span>
+									<span className="text-sm text-red-600">
+										Email is required*
+									</span>
 								)}
 							</div>
 							{/* -----------Password------------ */}
@@ -142,7 +146,9 @@ const Register = () => {
 									placeholder="*********"
 								/>
 								{errors.password?.type === 'required' && (
-									<span className=" text-red-600">Password is required</span>
+									<span className="text-sm text-red-600">
+										Password is required*
+									</span>
 								)}
 							</div>
 							{/* -----------Photo------------ */}
@@ -157,7 +163,9 @@ const Register = () => {
 										type="file"
 									/>
 									{errors.image?.type === 'required' && (
-										<p className="text-red-500">Image field is required</p>
+										<p className="text-sm text-red-500">
+											Image field is required*
+										</p>
 									)}
 								</label>
 							</div>
