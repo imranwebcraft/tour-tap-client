@@ -6,12 +6,14 @@ import Button from '../../../../../Components/Button/Button';
 import './navbar.css';
 import PropTypes from 'prop-types';
 import useAuth from '../../../../../Hook/useAuth';
+import { RiLogoutCircleRLine } from 'react-icons/ri';
+import { motion } from 'framer-motion';
+import { toast } from 'react-hot-toast';
 
 const Navbar = ({ screen, children, route }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isToggleOpen, setIsToggleOpen] = useState(false);
-	const { user } = useAuth();
-	console.log(user);
+	const { user, logOut } = useAuth();
 
 	// Dark mode control
 	const [theme, setTheme] = useState('light');
@@ -53,6 +55,16 @@ const Navbar = ({ screen, children, route }) => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
+
+	const handleLogOut = () => {
+		logOut()
+			.then(() => {
+				toast.success('Log out successfull');
+			})
+			.catch((err) => {
+				toast.error(err.message);
+			});
+	};
 
 	return (
 		<div
@@ -225,6 +237,26 @@ const Navbar = ({ screen, children, route }) => {
 												<div className="bg-slate-950 px-4 py-3 rounded-md bg-opacity-20 backdrop-blur-xl space-y-1 hover:cursor-not-allowed">
 													<p>{user?.displayName}</p>
 													<p>{user?.email}</p>
+												</div>
+												<div
+													onClick={handleLogOut}
+													className=" flex justify-end"
+												>
+													<motion.button
+														initial={{
+															scale: '1',
+														}}
+														whileHover={{
+															scale: 1.05,
+														}}
+														whileTap={{
+															scale: 0.9,
+														}}
+														transition={{ duration: 0.3 }}
+														className=" flex items-center gap-2 px-4 py-2 rounded-md bg-red-500"
+													>
+														<RiLogoutCircleRLine className="text-lg" /> Log Out
+													</motion.button>
 												</div>
 											</div>
 										)}

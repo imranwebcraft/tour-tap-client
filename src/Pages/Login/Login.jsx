@@ -29,9 +29,11 @@ const Login = () => {
 				console.log(result.user);
 				toast.success('Login successfull');
 				setLoading(false);
+				reset();
 			})
 			.catch((err) => {
 				toast.error(err.message);
+				setLoading(false);
 			});
 	};
 

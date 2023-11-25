@@ -56,11 +56,11 @@ const Register = () => {
 					reset();
 					setLoading(false);
 					navigate('/');
-					console.log(loading);
 				})
 				.catch((error) => {
 					console.log(error);
 					toast.error(error.message);
+					setLoading(false);
 				});
 		}
 	};
