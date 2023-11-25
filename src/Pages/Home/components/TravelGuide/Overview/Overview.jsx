@@ -8,7 +8,7 @@ const Overview = () => {
 	return (
 		<div className="space-y-10 flex flex-col-reverse gap-5">
 			<div>
-				<div className=" flex gap-5">
+				<div className="flex gap-10">
 					{/* Video */}
 					<Video></Video>
 					{/* Steps */}

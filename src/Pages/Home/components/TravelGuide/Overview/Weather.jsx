@@ -1,6 +1,6 @@
 const Weather = () => {
 	return (
-		<div>
+		<div className="mt-5">
 			{/* Weather */}
 			<div className="overflow-hidden rounded-lg shadow-lg dark:bg-gray-900 dark:text-gray-100">
 				<div className="flex items-end justify-end h-48 p-4 dark:bg-gray-500 bg-center bg-cover weatherbg">

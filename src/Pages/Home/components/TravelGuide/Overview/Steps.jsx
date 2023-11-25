@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 const Steps = () => {
 	return (
 		<div className="mx-auto">

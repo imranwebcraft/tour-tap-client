@@ -1,0 +1,72 @@
+[
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "Adventure",
+		"tripTitle": "Thrilling Mountain Expedition",
+		"price": 499,
+		"tourDetails": "Embark on a heart-pounding adventure with our thrilling mountain expedition. Explore majestic peaks, challenging trails, and breathtaking views. This package is designed for adrenaline junkies seeking the ultimate outdoor experience. Get ready for an unforgettable journey into the heart of nature."
+	},
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380&t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "Cultural",
+		"tripTitle": "Historical Wonders Tour",
+		"price": 349,
+		"tourDetails": "Immerse yourself in the rich tapestry of history with our Historical Wonders Tour. Visit ancient monuments, archaeological sites, and culturally significant landmarks. Discover the stories of civilizations past and marvel at the architectural marvels that have stood the test of time."
+	},
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380&t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "Relaxation",
+		"tripTitle": "Serenity Retreat",
+		"price": 599,
+		"tourDetails": "Escape to a haven of tranquility with our Serenity Retreat. Indulge in luxurious accommodations, spa treatments, and serene landscapes. This package is perfect for those looking to unwind, recharge, and experience pure relaxation in a picturesque setting."
+	},
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380&t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "Wildlife",
+		"tripTitle": "Safari Adventure",
+		"price": 449,
+		"tourDetails": "Embark on a thrilling Safari Adventure and witness the wonders of the animal kingdom. Experience up-close encounters with exotic wildlife, breathtaking landscapes, and expert-guided tours. This package promises an unforgettable journey into the heart of the wild."
+	},
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380&t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "Beach",
+		"tripTitle": "Tropical Paradise Escape",
+		"price": 699,
+		"tourDetails": "Bask in the sun and sink your toes into the golden sands with our Tropical Paradise Escape. Experience the epitome of beach luxury, crystal-clear waters, and vibrant marine life. This package is designed for those seeking a blissful escape to a tropical haven."
+	},
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380&t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "Mountain",
+		"tripTitle": "Majestic Peak Expedition",
+		"price": 499,
+		"tourDetails": "Conquer the heights of adventure with our Majestic Peak Expedition. Scale towering mountains, traverse challenging terrain, and witness panoramic views. This package is designed for avid mountaineers seeking an exhilarating journey to the summit of majestic peaks."
+	},
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380&t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "City",
+		"tripTitle": "Urban Explorer Experience",
+		"price": 299,
+		"tourDetails": "Embark on a journey through vibrant cities with our Urban Explorer Experience. Discover the culture, cuisine, and hidden gems of bustling metropolises. This package is perfect for those who crave the excitement of city life and the thrill of exploration."
+	},
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380&t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "Luxury",
+		"tripTitle": "Opulent Retreat",
+		"price": 899,
+		"tourDetails": "Indulge in opulence with our Opulent Retreat. Experience the height of luxury, personalized services, and lavish accommodations. This package is crafted for those with a taste for the finer things in life, seeking a truly luxurious and unforgettable getaway."
+	},
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380&t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "Hiking",
+		"tripTitle": "Scenic Trail Hike",
+		"price": 349,
+		"tourDetails": "Embark on a journey through picturesque landscapes with our Scenic Trail Hike. Traverse nature's wonders, breathe in the fresh mountain air, and witness breathtaking scenery. This package is ideal for hiking enthusiasts seeking a peaceful and rejuvenating outdoor adventure."
+	},
+	{
+		"image": "https://img.freepik.com/free-photo/blue-villa-beautiful-sea-hotel_1203-5316.jpg?w=1380&t=st=1700931879~exp=1700932479~hmac=decf5c6fc9860e1199be94eff3b17f05f8f999d7d36e47da2799151d823511b5",
+		"tourType": "Cruise",
+		"tripTitle": "Island Paradise Cruise",
+		"price": 799,
+		"tourDetails": "Embark on a luxurious Island Paradise Cruise and set sail on the crystal-clear waters of tropical islands. Indulge in the ultimate maritime experience, exquisite cuisine, and breathtaking sunsets. This package is designed for those seeking a serene and romantic oceanic adventure."
+	}
+]
