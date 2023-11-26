@@ -243,16 +243,15 @@ const Navbar = ({ screen, children, route }) => {
 													className=" flex justify-end"
 												>
 													<motion.button
-														initial={{
-															scale: '1',
-														}}
+														initial={{ scale: 1, opacity: 0.8 }}
 														whileHover={{
 															scale: 1.05,
+															transition: { duration: 0.3 },
 														}}
 														whileTap={{
 															scale: 0.9,
+															transition: { duration: 0.3 },
 														}}
-														transition={{ duration: 0.3 }}
 														className=" flex items-center gap-2 px-4 py-2 rounded-md bg-red-500"
 													>
 														<RiLogoutCircleRLine className="text-lg" /> Log Out

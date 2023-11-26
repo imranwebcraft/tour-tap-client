@@ -6,6 +6,7 @@ import 'react-tabs/style/react-tabs.css';
 import './tab.css';
 import SectionTitle from '../../../../Components/SectionTitle/SectionTitle';
 import Overview from './Overview/Overview';
+import OurPackage from './OurPackage/OurPackage';
 
 const TravelGuide = () => {
 	const [tabIndex, setTabIndex] = useState(0);
@@ -14,7 +15,7 @@ const TravelGuide = () => {
 			<SectionContainer>
 				<Container>
 					{/* Section Title */}
-					<SectionTitle></SectionTitle>
+					<SectionTitle subHeading={'Travel'} heading={'Travel'}></SectionTitle>
 					{/* React Tabs */}
 					<Tabs
 						selectedIndex={tabIndex}
@@ -28,7 +29,9 @@ const TravelGuide = () => {
 						<TabPanel>
 							<Overview></Overview>
 						</TabPanel>
-						<TabPanel></TabPanel>
+						<TabPanel>
+							<OurPackage></OurPackage>
+						</TabPanel>
 						<TabPanel></TabPanel>
 					</Tabs>
 				</Container>

@@ -6,6 +6,12 @@
 	border: none;
 	border-image: none;
 }
+.react-tabs__tab:hover {
+	background-color: rgb(243, 243, 243);
+	border-radius: 5px 5px 0px 0px;
+	transition: all;
+	transition-duration: 0.3s;
+}
 
 .react-tabs__tab--selected {
 	color: rgb(6, 157, 6);
@@ -16,5 +22,9 @@
 	font-weight: 600;
 }
 .react-tabs__tab-list {
-	border: none;
+}
+
+.react-tabs__tab {
+	border-bottom: 2px solid purple;
+	border-radius: 5px 5px 0px 0px;
 }
