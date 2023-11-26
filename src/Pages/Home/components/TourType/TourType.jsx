@@ -66,7 +66,7 @@ const TourType = () => {
 									<div key={index}>
 										<h3
 											onClick={() => setSelectedType(item)}
-											className="hover:scale-105 hover:cursor-pointer hover:text-green-500 transition-all duration-300"
+											className=" inline-block hover:scale-105 hover:cursor-pointer hover:text-green-500 transition-all duration-300"
 										>
 											{item}
 										</h3>

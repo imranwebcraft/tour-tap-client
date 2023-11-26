@@ -8,6 +8,7 @@ import ContactUs from '../Pages/ContactUs/ContactUs';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import AllPackages from '../Pages/AllPackages/AllPackages';
+import AllStory from '../Pages/AllStory/AllStory';
 
 const router = createBrowserRouter([
 	{
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
 			{
 				path: 'packages',
 				element: <AllPackages></AllPackages>,
+			},
+			{
+				path: 'stories',
+				element: <AllStory></AllStory>,
 			},
 		],
 	},

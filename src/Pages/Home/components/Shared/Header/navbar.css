@@ -36,3 +36,6 @@
 .bg-image.packages-page {
 	background-image: url('../../../../../assets/images/allPackage.jpg');
 }
+.bg-image.story-page {
+	background-image: url('../../../../../assets/images/story.jpg');
+}
