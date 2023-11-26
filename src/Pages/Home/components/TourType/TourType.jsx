@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import SectionTitle from '../../../../Components/SectionTitle/SectionTitle';
 import SectionContainer from '../../../../UI/SectionContainer';
 import Slider from 'react-slick';
@@ -71,24 +72,6 @@ const TourType = () => {
 										</h3>
 									</div>
 								))}
-
-								{/* <div>
-									<h3 className="hover:scale-105 hover:cursor-pointer hover:text-green-500 transition-all duration-300">
-										Adventure
-									</h3>
-								</div> */}
-								{/* <div>
-									<h3>Beach</h3>
-								</div>
-								<div>
-									<h3>Safari</h3>
-								</div>
-								<div>
-									<h3>Cultural</h3>
-								</div>
-								<div>
-									<h3>Wellness</h3>
-								</div> */}
 							</Slider>
 						</div>
 					</div>

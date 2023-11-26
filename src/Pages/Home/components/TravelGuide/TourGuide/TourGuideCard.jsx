@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import MotionButton from '../../../../../Components/MotionButton/MotionButton';
 import { HiOutlineMail } from 'react-icons/hi';
 const TourGuideCard = ({ tourGuide }) => {
