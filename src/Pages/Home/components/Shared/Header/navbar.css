@@ -33,3 +33,6 @@
 .bg-image.login-page {
 	background-image: url('../../../../../assets/images/image1.jpg');
 }
+.bg-image.packages-page {
+	background-image: url('../../../../../assets/images/allPackage.jpg');
+}

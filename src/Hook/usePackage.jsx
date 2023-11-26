@@ -3,7 +3,7 @@ import useAxiosPublic from './useAxiosPublic';
 const usePackage = () => {
 	const axiosPublic = useAxiosPublic();
 
-	const { data: packages, isLoading: loading } = useQuery({
+	const { data: packages = [], isLoading: loading } = useQuery({
 		queryKey: ['packages'],
 		queryFn: async () => {
 			const res = await axiosPublic.get('/package');

@@ -18,6 +18,7 @@
 	background-color: rgb(240, 239, 239);
 	border-top: none;
 	border-left: none;
+	border-bottom: 2px solid rgba(244, 63, 94, 0.9);
 	border-right: none;
 	font-weight: 600;
 }
@@ -25,6 +26,6 @@
 }
 
 .react-tabs__tab {
-	border-bottom: 2px solid purple;
+	border-bottom: 2px solid rgba(244, 63, 94, 0.9);
 	border-radius: 5px 5px 0px 0px;
 }

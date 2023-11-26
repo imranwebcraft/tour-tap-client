@@ -17,7 +17,7 @@ const OurPackage = () => {
 					))}
 				</div>
 			</div>
-			<Link>
+			<Link to={'/packages'}>
 				<div className=" flex w-full justify-center items-center mt-10">
 					<MotionButton btnText={'All Package'}></MotionButton>
 				</div>
