@@ -28,7 +28,7 @@ const TourGuideCard = ({ tourGuide }) => {
 						{email}
 					</p>
 					<Link
-						to={`tourGuide/:${_id}`}
+						to={`tourGuide/${_id}`}
 						className="flex items-center justify-between w-full gap-4 mt-8"
 					>
 						<MotionButton
