@@ -4,7 +4,6 @@ import TourGuideCard from './TourGuideCard';
 
 const TourGuide = () => {
 	const [tourGuides] = useTourGuide();
-	console.log(tourGuides);
 	return (
 		<div>
 			<div className=" mt-5">

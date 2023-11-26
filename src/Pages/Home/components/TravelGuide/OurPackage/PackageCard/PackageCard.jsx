@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import MotionButton from '../../../../../../Components/MotionButton/MotionButton';
 import { FaRegHeart } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 const PackageCard = ({ packageItem }) => {
 	const [wishlist, setWishlist] = useState(false);
 
 	// Sate to manage show all button
-	const { image, tourType, tripTitle, price } = packageItem || {};
+	const { _id, image, tourType, tripTitle, price } = packageItem || {};
 
 	return (
 		<section className="group tracking-wide">
@@ -35,9 +36,9 @@ const PackageCard = ({ packageItem }) => {
 						From <span className=" font-bold text-orange-500">$ {price}</span>
 					</p>
 				</div>
-				<div className="mt-auto p-6">
+				<Link to={`/packages/${_id}`} className="mt-auto p-6">
 					<MotionButton btnText={'View Package'} btnBlock={true} />
-				</div>
+				</Link>
 			</div>
 		</section>
 	);

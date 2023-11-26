@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
+import { Link } from 'react-router-dom';
 import MotionButton from '../../../../../Components/MotionButton/MotionButton';
 import { HiOutlineMail } from 'react-icons/hi';
 const TourGuideCard = ({ tourGuide }) => {
-	const { _id, name, image, email, education, skills, workExperience, __v } =
+	const { _id, name, image, email, education, skills, workExperience } =
 		tourGuide || {};
 
 	return (
@@ -26,12 +27,15 @@ const TourGuideCard = ({ tourGuide }) => {
 						<HiOutlineMail className=" text-lg" />
 						{email}
 					</p>
-					<div className="flex items-center justify-between w-full gap-4 mt-8">
+					<Link
+						to={`tourGuide/:${_id}`}
+						className="flex items-center justify-between w-full gap-4 mt-8"
+					>
 						<MotionButton
 							btnText={'See Profile'}
 							btnBlock={true}
 						></MotionButton>
-					</div>
+					</Link>
 				</div>
 			</div>
 		</div>
