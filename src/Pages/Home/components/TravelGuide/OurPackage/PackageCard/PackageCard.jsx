@@ -16,7 +16,7 @@ const PackageCard = ({ packageItem }) => {
 						src={image}
 						alt={tripTitle}
 					/>
-					<span className=" absolute right-2 top-2 hover:cursor-pointer">
+					<span className=" absolute right-2 top-2 hover:cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-md">
 						<FaRegHeart
 							onClick={() => setWishlist(!wishlist)}
 							className={`text-3xl  rounded-md  px-2 py-0.5

@@ -7,6 +7,7 @@ import './tab.css';
 import SectionTitle from '../../../../Components/SectionTitle/SectionTitle';
 import Overview from './Overview/Overview';
 import OurPackage from './OurPackage/OurPackage';
+import TourGuide from './TourGuide/TourGuide';
 
 const TravelGuide = () => {
 	const [tabIndex, setTabIndex] = useState(0);
@@ -32,7 +33,9 @@ const TravelGuide = () => {
 						<TabPanel>
 							<OurPackage></OurPackage>
 						</TabPanel>
-						<TabPanel></TabPanel>
+						<TabPanel>
+							<TourGuide></TourGuide>
+						</TabPanel>
 					</Tabs>
 				</Container>
 			</SectionContainer>
