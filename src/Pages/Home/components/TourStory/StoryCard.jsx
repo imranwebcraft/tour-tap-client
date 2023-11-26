@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import MotionButton from '../../../../Components/MotionButton/MotionButton';
 
 const StoryCard = ({ story }) => {
@@ -38,12 +39,12 @@ const StoryCard = ({ story }) => {
 						<p className="mt-4 text-gray-700">
 							{story?.storyDetails?.slice(0, 200)}...
 						</p>
-						<div className=" mt-3">
+						<Link to={`/story/${story?._id}`} className=" mt-3">
 							<MotionButton
 								btnBlock={true}
-								btnText={'Read more...'}
+								btnText={'Read story...'}
 							></MotionButton>
-						</div>
+						</Link>
 					</div>
 				</div>
 			</div>

@@ -26,7 +26,7 @@ const TourStory = () => {
 				</Container>
 				<Link to={'/stories'}>
 					<div className=" flex w-full justify-center items-center mt-10">
-						<MotionButton btnText={'Read More Story'}></MotionButton>
+						<MotionButton btnText={'See All Story'}></MotionButton>
 					</div>
 				</Link>
 			</SectionContainer>

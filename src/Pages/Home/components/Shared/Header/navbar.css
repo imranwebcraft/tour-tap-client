@@ -42,3 +42,6 @@
 .bg-image.packages-page {
 	background-image: url('../../../../../assets/images/packagedetails.jpg');
 }
+.bg-image.story-details-page {
+	background-image: url('../../../../../assets/images/storydetails.jpg');
+}
