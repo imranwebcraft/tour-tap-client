@@ -22,11 +22,13 @@ import MyWishlist from '../Pages/Dashboard/Tourist/MyWishlist/MyWishlist';
 import TourGuideProfile from '../Pages/Dashboard/TourGuide/TourGuideProfile/TourGuideProfile';
 import MyAssignedTour from '../Pages/Dashboard/TourGuide/MyAssignedTour/MyAssignedTour';
 import TourTypeCard from '../Pages/TourTypeCard/TourTypeCard';
+import Error from '../Pages/Error/Error';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <MainLayout></MainLayout>,
+		errorElement: <Error></Error>,
 		children: [
 			{
 				path: '/',
