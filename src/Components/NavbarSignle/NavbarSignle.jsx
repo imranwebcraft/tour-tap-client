@@ -44,7 +44,7 @@ const NavbarSignle = () => {
 						>
 							<div className=" flex items-center gap-2">
 								<Logo></Logo>
-								<h3 className="text-lg lg:text-xl font-bold">Tour-Tap</h3>
+								<h3 className="text-lg lg:text-xl font-bold pt-2">Tour-Tap</h3>
 							</div>
 						</Link>
 						{/*      <!-- Mobile trigger --> */}

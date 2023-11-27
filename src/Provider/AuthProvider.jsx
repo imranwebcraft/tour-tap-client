@@ -10,6 +10,7 @@ import {
 import { createContext, useEffect } from 'react';
 import { useState } from 'react';
 import auth from '../Config/Firebase.config';
+import useAxiosPublic from '../Hook/useAxiosPublic';
 
 // -------CONTEXT--------//
 export const AuthContext = createContext(null);
@@ -19,6 +20,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
+	const axiosPublic = useAxiosPublic();
 
 	// -----------FIREBASE MANAGER ---------//
 	// Cretae a new user
@@ -61,13 +63,24 @@ const AuthProvider = ({ children }) => {
 			setLoading(true);
 			setUser(currentUser);
 			// TODO: Make set user false individually for every stage that will come later
-			setLoading(false);
+			if (currentUser) {
+				const user = { email: currentUser?.email };
+				axiosPublic.post('/jwt', user).then((res) => {
+					if (res.data.token) {
+						localStorage.setItem('token', res.data.token);
+						setLoading(false);
+					}
+				});
+			} else {
+				localStorage.removeItem('token');
+				setLoading(false);
+			}
 		});
 
 		return () => {
 			unsubscribe();
 		};
-	}, []);
+	}, [axiosPublic]);
 
 	const authInfo = {
 		user,
