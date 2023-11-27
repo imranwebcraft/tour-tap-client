@@ -10,20 +10,25 @@ import { MdCastForEducation } from 'react-icons/md';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import useAuth from '../../Hook/useAuth';
+import { toast } from 'react-hot-toast';
 
 const TourGuideDetails = () => {
+	const [tourGuideEmail, setTourGuideEmail] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [rating, setRating] = useState(0);
+	const [commentSubmitted, setCommentSubmitted] = useState(false);
+	const { user } = useAuth();
 
 	const { id } = useParams();
 	const axiosPublic = useAxiosPublic();
 
 	const { data: signleTourGuide = {} } = useQuery({
-		queryKey: ['story'],
+		queryKey: ['tourGuide'],
 		queryFn: async () => {
 			const res = await axiosPublic.get(`/tourGuide/${id}`);
+			setTourGuideEmail(res.data?.email);
 			return res.data;
 		},
 	});
@@ -31,8 +36,51 @@ const TourGuideDetails = () => {
 	const { name, image, email, education, skills, workExperience } =
 		signleTourGuide || {};
 
+	// Get comments from database
+	const { data: comments = [], refetch } = useQuery({
+		queryKey: ['comments'],
+		queryFn: async () => {
+			const res = await axiosPublic.get(`/comments/${email}`);
+			return res.data;
+		},
+		enabled: !!tourGuideEmail,
+	});
 	const handleRatingChange = (value) => {
 		setRating(value);
+	};
+
+	const handleComment = async (event) => {
+		if (commentSubmitted) {
+			toast.error('You already have a comment');
+		}
+
+		setLoading(true);
+		event.preventDefault();
+		const form = event.target;
+		const comment = form.comment.value;
+
+		const commentData = {
+			authorName: user?.displayName,
+			authorImage: user?.photoURL,
+			authorEmail: user?.email,
+			email: email,
+			comment: comment,
+			rating: rating,
+		};
+
+		// Store comment in database
+		try {
+			await axiosPublic.post('/comments', commentData).then(() => {
+				toast.success('Your comment posted successfull!');
+				form.reset();
+				refetch();
+				setCommentSubmitted(true);
+			});
+		} catch (error) {
+			console.log(error.message);
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	return (
@@ -114,6 +162,7 @@ const TourGuideDetails = () => {
 					<div className=" my-5 space-y-2">
 						<h1 className=" text-xl font-semibold">Rate This Tour Guide</h1>
 						<Rating
+							initialRating={rating}
 							onChange={handleRatingChange}
 							emptySymbol={<FaRegStar className=" text-xl text-orange-500" />}
 							fullSymbol={
@@ -121,32 +170,52 @@ const TourGuideDetails = () => {
 							}
 						/>
 					</div>
+
+					{/* Show posted comment */}
+					<div>
+						{comments?.map((comment) => (
+							<div key={comment._id} className=" mt-5">
+								<div className=" flex gap-2 items-center mb-1">
+									<img
+										className=" h-10 w-10 rounded-full"
+										src={comment.authorImage}
+									/>
+									<div className=" flex flex-col text-sm">
+										<p>{comment.authorName}</p>
+										<p>{comment.authorEmail}</p>
+									</div>
+								</div>
+								<p>{comment.comment}</p>
+							</div>
+						))}
+					</div>
+
 					{/* Comment */}
 					<div className=" my-5 space-y-2">
 						<h1 className=" text-xl font-semibold">Leave a comment</h1>
-						<div>
+						<form onSubmit={handleComment}>
 							<textarea
-								className=" block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-green-300 focus:outline-none focus:ring focus:ring-green-300"
 								name="comment"
+								className=" block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-green-300 focus:outline-none focus:ring focus:ring-green-300 disabled:opacity-30 disabled:cursor-not-allowed"
 								cols="30"
 								rows="10"
+								disabled={commentSubmitted}
 							></textarea>
 							<div className="mt-6">
-								<motion.button
-									initial={{ scale: 1, opacity: 0.8 }}
-									whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-									whileTap={{ scale: 0.9, transition: { duration: 0.3 } }}
+								<button
+									disabled={commentSubmitted}
+									type="submit"
 									className="
 								flex items-center justify-center gap-2
-								w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+								w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50 disabled:bg-opacity-30 disabled:cursor-not-allowed"
 								>
 									{loading ? (
 										<AiOutlineLoading3Quarters className="animate-spin text-white" />
 									) : undefined}
 									Post Your Comment
-								</motion.button>
+								</button>
 							</div>
-						</div>
+						</form>
 					</div>
 				</Container>
 			</SectionContainer>
