@@ -231,7 +231,10 @@ const Navbar = ({ screen, children, route }) => {
 
 										{isOpen && (
 											<div className=" bg-slate-900 bg-opacity-70 backdrop-blur-2xl px-4 py-5 flex flex-col gap-2 text-right absolute right-[0%] mt-5 rounded-lg">
-												<Link className=" underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-green-500 transition-colors duration-300 transform  hover:border-green-500">
+												<Link
+													to={'/dashboard'}
+													className=" underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-green-500 transition-colors duration-300 transform  hover:border-green-500"
+												>
 													Dashboard
 												</Link>
 												<Link className=" underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-green-500 transition-colors duration-300 transform  hover:border-green-500">

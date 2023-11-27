@@ -12,7 +12,15 @@ import AllStory from '../Pages/AllStory/AllStory';
 import PackageDetails from '../Pages/PackageDetails/PackageDetails';
 import TourGuideDetails from '../Pages/TourGuideDetails/TourGuideDetails';
 import StoryDetails from '../Pages/StoryDetails/StoryDetails';
-import PrivateRoute from './PrivateRoute';
+import DashboardLayout from '../Layout/DashboardLayout/DashboardLayout';
+import AdminProfile from '../Pages/Dashboard/Admin/AdminProfile/AdminProfile';
+import AddPackage from '../Pages/Dashboard/Admin/AddPackage/AddPackage';
+import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers/ManageUsers';
+import TouristProfile from '../Pages/Dashboard/Tourist/TouristProfile/TouristProfile';
+import MyBooking from '../Pages/Dashboard/Tourist/MyBooking/MyBooking';
+import MyWishlist from '../Pages/Dashboard/Tourist/MyWishlist/MyWishlist';
+import TourGuideProfile from '../Pages/Dashboard/TourGuide/TourGuideProfile/TourGuideProfile';
+import MyAssignedTour from '../Pages/Dashboard/TourGuide/MyAssignedTour/MyAssignedTour';
 
 const router = createBrowserRouter([
 	{
@@ -67,6 +75,52 @@ const router = createBrowserRouter([
 			{
 				path: 'tourGuide/:id',
 				element: <TourGuideDetails></TourGuideDetails>,
+			},
+		],
+	},
+	{
+		path: '/dashboard',
+		element: <DashboardLayout></DashboardLayout>,
+		children: [
+			//  ########## ADMIN #########
+			{
+				path: 'admin-profile',
+				element: <AdminProfile></AdminProfile>,
+			},
+			{
+				path: 'add-package',
+				element: <AddPackage></AddPackage>,
+			},
+			{
+				path: 'users',
+				element: <ManageUsers></ManageUsers>,
+			},
+			//  ########## TOURIST #########
+			{
+				path: 'tourist-profile',
+				element: <TouristProfile></TouristProfile>,
+			},
+			{
+				path: 'tourist-profile',
+				element: <TouristProfile></TouristProfile>,
+			},
+			{
+				path: 'booking',
+				element: <MyBooking></MyBooking>,
+			},
+			{
+				path: 'wishlist',
+				element: <MyWishlist></MyWishlist>,
+			},
+
+			//  ########## Tour Guide #########
+			{
+				path: 'tourguide-profile',
+				element: <TourGuideProfile></TourGuideProfile>,
+			},
+			{
+				path: 'assign-tour',
+				element: <MyAssignedTour></MyAssignedTour>,
 			},
 		],
 	},
