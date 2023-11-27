@@ -14,14 +14,15 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { useState } from 'react';
 import './datePicker.css';
 import useTourGuide from '../../Hook/useTourGuide';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import Modal from './Modal';
+import { toast } from 'react-hot-toast';
 
 const PackageDetails = () => {
 	const [loading, setLoading] = useState(false);
 	const { user } = useAuth();
 	const [tourGuides] = useTourGuide();
 	const [tourGuide, setTourFuide] = useState('');
-	console.log(tourGuide);
+	const axiosPublic = useAxiosPublic();
 
 	const {
 		register,
@@ -30,7 +31,6 @@ const PackageDetails = () => {
 		reset,
 	} = useForm();
 	const { id } = useParams();
-	const axiosPublic = useAxiosPublic();
 
 	const { data: singlePackage } = useQuery({
 		queryKey: ['package'],
@@ -40,14 +40,37 @@ const PackageDetails = () => {
 		},
 	});
 
-	const onSubmit = (data) => {
-		console.log(data);
-		// Todo: don't forget to shave user photo when you save the booking to the database
-		console.log();
-	};
-
 	const { image, tourType, tripTitle, price, tourDetails } =
 		singlePackage || {};
+
+	const onSubmit = async (data) => {
+		console.log(data);
+		// Todo: status = "In review"
+		const bookignData = {
+			touristName: user?.displayName,
+			touristEmail: user?.email,
+			touristImage: user?.photoURL,
+
+			date: data?.date,
+			status: 'pending',
+
+			tourGuideEmail: data.tourGuide,
+
+			image: image,
+			tripTitle: tripTitle,
+			price: price,
+		};
+
+		// Send bookig data to the server
+		await axiosPublic
+			.post('/book-package', bookignData)
+			.then(() => {
+				toast.success('Your booking Confirmed!');
+			})
+			.catch((err) => {
+				toast.error(err.message);
+			});
+	};
 
 	return (
 		<div>
@@ -169,7 +192,7 @@ const PackageDetails = () => {
 										Select your tour guide
 									</option>
 									{tourGuides.map((tourGuide, i) => (
-										<option key={i} value={tourGuide.name}>
+										<option key={i} value={tourGuide.email}>
 											{tourGuide.name}
 										</option>
 									))}
@@ -183,7 +206,7 @@ const PackageDetails = () => {
 							</div>
 
 							{/* Booking confirm button */}
-							<div className="mt-6">
+							{/* <div className="mt-6">
 								<button
 									type="submit"
 									className="flex items-center justify-center gap-2
@@ -194,7 +217,8 @@ const PackageDetails = () => {
 									) : undefined}
 									Book This Package
 								</button>
-							</div>
+							</div> */}
+							<Modal></Modal>
 						</form>
 					</div>
 				</Container>
