@@ -1,122 +1,84 @@
 const Test = () => {
 	return (
 		<div>
-			<div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
-				<div
-					className="hidden bg-cover lg:block lg:w-1/2"
-					style="background-image: url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80');"
-				></div>
-
-				<div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
-					<div className="flex justify-center mx-auto">
-						<img
-							className="w-auto h-7 sm:h-8"
-							src="https://merakiui.com/images/logo.svg"
-							alt=""
-						/>
-					</div>
-
-					<p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-						Welcome back!
-					</p>
-
-					<a
-						href="#"
-						className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-					>
-						<div className="px-4 py-2">
-							<svg className="w-6 h-6" viewBox="0 0 40 40">
-								<path
-									d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
-									fill="#FFC107"
-								/>
-								<path
-									d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z"
-									fill="#FF3D00"
-								/>
-								<path
-									d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z"
-									fill="#4CAF50"
-								/>
-								<path
-									d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
-									fill="#1976D2"
-								/>
+			<div className="flex flex-col justify-start max-w-xl gap-4 p-4 bg-white shadow-xl rounded-xl dark:bg-gray-800 md:flex-row">
+				<div className="relative">
+					<img
+						src="/images/landscape/1.jpg"
+						className="w-full rounded-xl md:w-auto md:max-h-40"
+					/>
+					<span className="absolute px-2 py-1 text-xs text-white rounded bg-gray-700/50 right-2 bottom-2">
+						7 min
+					</span>
+				</div>
+				<div className="flex flex-col justify-between">
+					<div className="flex items-start justify-between my-2 text-gray-700 dark:text-white md:m-0">
+						<p className="text-xl leading-5">
+							How to travel arround the world without any money
+						</p>
+						<button className="text-red-400 hover:text-red-600">
+							<svg
+								width="25"
+								height="25"
+								fill="currentColor"
+								viewBox="0 0 1792 1792"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z"></path>
 							</svg>
-						</div>
-
-						<span className="w-5/6 px-4 py-3 font-bold text-center">
-							Sign in with Google
-						</span>
-					</a>
-
-					<div className="flex items-center justify-between mt-4">
-						<span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
-
-						<a
-							href="#"
-							className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
-						>
-							or login with email
-						</a>
-
-						<span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
-					</div>
-
-					<div className="mt-4">
-						<label
-							className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-							for="LoggingEmailAddress"
-						>
-							Email Address
-						</label>
-						<input
-							id="LoggingEmailAddress"
-							className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-							type="email"
-						/>
-					</div>
-
-					<div className="mt-4">
-						<div className="flex justify-between">
-							<label
-								className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-								for="loggingPassword"
-							>
-								Password
-							</label>
-							<a
-								href="#"
-								className="text-xs text-gray-500 dark:text-gray-300 hover:underline"
-							>
-								Forget Password?
-							</a>
-						</div>
-
-						<input
-							id="loggingPassword"
-							className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-							type="password"
-						/>
-					</div>
-
-					<div className="mt-6">
-						<button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
-							Sign In
 						</button>
 					</div>
-
-					<div className="flex items-center justify-between mt-4">
-						<span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-
-						<a
-							href="#"
-							className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
+					<div className="flex items-center my-2 text-xs text-gray-500 dark:text-gray-400 md:m-0">
+						<svg
+							width="10"
+							height="10"
+							fill="currentColor"
+							className="mr-2"
+							viewBox="0 0 1792 1792"
+							xmlns="http://www.w3.org/2000/svg"
 						>
-							or sign up
-						</a>
-
-						<span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+							<path d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z"></path>
+						</svg>
+						123,344,893 views
+						<svg
+							width="10"
+							height="10"
+							fill="currentColor"
+							className="ml-6 mr-2"
+							viewBox="0 0 1792 1792"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z"></path>
+						</svg>
+						45 876 likes
+					</div>
+					<div className="flex items-start my-2 md:m-0">
+						<div className="relative">
+							<a href="#" className="relative block">
+								<img
+									alt="profil"
+									src="/images/person/1.jpg"
+									className="mx-auto object-cover rounded-full h-10 w-10 "
+								/>
+							</a>
+							<svg
+								width="10"
+								height="10"
+								fill="currentColor"
+								className="absolute bottom-0 right-0 w-4 h-4 p-1 -mx-1 -my-1 text-white bg-blue-600 rounded-full fill-current"
+								viewBox="0 0 1792 1792"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z"></path>
+							</svg>
+						</div>
+						<div className="flex flex-col items-start justify-center ml-2">
+							<span className="flex items-center text-sm text-gray-600 dark:text-gray-200">
+								Charlie Rabiller
+								<span className="block w-2 h-2 ml-1 bg-green-500 rounded-full"></span>
+							</span>
+							<span className="text-xs text-gray-400">1 week ago</span>
+						</div>
 					</div>
 				</div>
 			</div>

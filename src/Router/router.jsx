@@ -23,6 +23,7 @@ import TourGuideProfile from '../Pages/Dashboard/TourGuide/TourGuideProfile/Tour
 import MyAssignedTour from '../Pages/Dashboard/TourGuide/MyAssignedTour/MyAssignedTour';
 import TourTypeCard from '../Pages/TourTypeCard/TourTypeCard';
 import Error from '../Pages/Error/Error';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
 	{
@@ -87,7 +88,11 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '/dashboard',
-		element: <DashboardLayout></DashboardLayout>,
+		element: (
+			<PrivateRoute>
+				<DashboardLayout></DashboardLayout>
+			</PrivateRoute>
+		),
 		children: [
 			//  ########## ADMIN #########
 			{
