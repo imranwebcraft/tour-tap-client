@@ -10,15 +10,15 @@ const DashboardLayout = () => {
 	return (
 		<div className=" flex gap-10">
 			{/* Sidebar */}
-			<div className="flex flex-col h-full p-3 w-60 dark:bg-gray-900 dark:text-gray-100 border-r min-h-screen pl-5">
+			<div className="flex flex-col h-full p-3 w-60 bg-emerald-500 dark:bg-gray-900 dark:text-gray-100 border-r min-h-screen pl-5">
 				<div className="space-y-3">
 					{/* Logo */}
 					<Link
 						to={'/'}
-						className=" flex items-center gap-2 hover:scale-105 transition-all duration-300"
+						className=" flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 bg-emerald-600 p-5 rounded-md"
 					>
 						<Logo></Logo>
-						<h3 className=" text-black text-lg lg:text-xl font-bold pt-2">
+						<h3 className=" text-white text-lg lg:text-xl font-bold pt-2">
 							Tour-Tap
 						</h3>
 					</Link>
@@ -31,7 +31,7 @@ const DashboardLayout = () => {
 								<NavLink
 									to={'/dashboard/admin-profile'}
 									className={({ isActive }) =>
-										isActive ? 'text-green-500 font-medium' : ''
+										isActive ? 'text-white font-medium' : ''
 									}
 								>
 									<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -46,7 +46,7 @@ const DashboardLayout = () => {
 								<NavLink
 									to={'/dashboard/add-package'}
 									className={({ isActive }) =>
-										isActive ? 'text-green-500 font-medium' : ''
+										isActive ? 'text-white  font-medium' : ''
 									}
 								>
 									<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -62,7 +62,7 @@ const DashboardLayout = () => {
 								<NavLink
 									to={'/dashboard/users'}
 									className={({ isActive }) =>
-										isActive ? 'text-green-500 font-medium' : ''
+										isActive ? 'text-white font-medium' : ''
 									}
 								>
 									<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -80,7 +80,7 @@ const DashboardLayout = () => {
 								<NavLink
 									to={'/dashboard/tourist-profile'}
 									className={({ isActive }) =>
-										isActive ? 'text-green-500 font-medium' : ''
+										isActive ? 'text-white  font-medium' : ''
 									}
 								>
 									<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -94,7 +94,7 @@ const DashboardLayout = () => {
 								<NavLink
 									to={'/dashboard/booking'}
 									className={({ isActive }) =>
-										isActive ? 'text-green-500 font-medium' : ''
+										isActive ? 'text-white  font-medium' : ''
 									}
 								>
 									<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -108,7 +108,7 @@ const DashboardLayout = () => {
 								<NavLink
 									to={'/dashboard/wishlist'}
 									className={({ isActive }) =>
-										isActive ? 'text-green-500 font-medium' : ''
+										isActive ? 'text-white  font-medium' : ''
 									}
 								>
 									<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -126,7 +126,7 @@ const DashboardLayout = () => {
 								<NavLink
 									to={'/dashboard/tourguide-profile'}
 									className={({ isActive }) =>
-										isActive ? 'text-green-500 font-medium' : ''
+										isActive ? 'text-white  font-medium' : ''
 									}
 								>
 									<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -138,7 +138,7 @@ const DashboardLayout = () => {
 								<NavLink
 									to={'/dashboard/assign-tour'}
 									className={({ isActive }) =>
-										isActive ? 'text-green-500 font-medium' : ''
+										isActive ? 'text-white  font-medium' : ''
 									}
 								>
 									<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">

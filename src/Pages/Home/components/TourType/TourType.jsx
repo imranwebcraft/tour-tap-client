@@ -7,10 +7,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import Container from '../../../../UI/Container';
 import './tourType.css';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const TourType = () => {
 	const tourType = ['Adventure', 'Beatch', 'Safari', 'Cultural', 'Wellness'];
 	const [selectedType, setSelectedType] = useState();
+	console.log(selectedType);
 
 	var settings = {
 		dots: false,
@@ -64,12 +66,13 @@ const TourType = () => {
 							>
 								{tourType?.map((item, index) => (
 									<div key={index}>
-										<h3
+										<Link
+											to={`/tourType/${item}`}
 											onClick={() => setSelectedType(item)}
 											className=" inline-block hover:scale-105 hover:cursor-pointer hover:text-green-500 transition-all duration-300"
 										>
 											{item}
-										</h3>
+										</Link>
 									</div>
 								))}
 							</Slider>
