@@ -1,25 +1,32 @@
 import useAuth from '../../../Hook/useAuth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
+import useAxiosPublic from '../../../Hook/useAxiosPublic';
 
 const SocialLogin = () => {
-	// const axiosPublic = useAxiosPublic();
+	const axiosPublic = useAxiosPublic();
 	const { googleSignIn } = useAuth();
 	const navigate = useNavigate();
 
 	const handleGoogleSignIn = () => {
 		googleSignIn()
-			.then(() => {
+			.then((result) => {
 				toast.success('Google sign in successfull');
 				// TODO: Send userInfo to the database
-				// const userInfo = {
-				// 	name: result.user?.displayName,
-				// 	email: result.user?.email,
-				// };
-				// axiosPublic.post('/users', userInfo).then((res) => {
-				// 	console.log(res.data);
-				// });
-				navigate('/');
+				const userInfo = {
+					name: result.user?.displayName,
+					email: result.user?.email,
+					role: 'tourist',
+				};
+				axiosPublic
+					.post('/users', userInfo)
+					.then(() => {
+						toast.success('Sign in info saved');
+						navigate('/');
+					})
+					.catch((err) => {
+						toast.error(err.message);
+					});
 			})
 			.catch((err) => {
 				console.log(err.message);

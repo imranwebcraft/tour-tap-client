@@ -17,7 +17,7 @@ const AllStory = () => {
 				<Container>
 					<div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 						{stories?.map((item) => (
-							<StoryCard key={item._id} packageItem={item}></StoryCard>
+							<StoryCard key={item._id} story={item}></StoryCard>
 						))}
 					</div>
 				</Container>

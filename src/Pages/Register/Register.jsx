@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../Components/Logo';
 import NavbarSignle from '../../Components/NavbarSignle/NavbarSignle';
@@ -36,18 +37,28 @@ const Register = () => {
 				'Content-Type': 'multipart/form-data',
 			},
 		});
-		console.log(res);
-		console.log(res?.data?.data?.display_url);
 		if (res?.data?.success) {
 			createUser(data?.email, data?.password)
 				.then((result) => {
-					console.log(result.user);
+					const user = result.user;
 					toast.success('User create successfully');
 
 					updateUserProfile(data.name, res?.data?.data?.display_url)
-						.then(() => {
+						.then(async () => {
 							toast.success('User profile update successfull');
-							// TODO: Save user info to the database
+							const usesr = {
+								name: data.name,
+								email: data.email,
+								role: 'tourist',
+							};
+							await axiosPublic
+								.post('/users', usesr)
+								.then(() => {
+									toast.success('User info saved successfully');
+								})
+								.catch((err) => {
+									toast.error(err.message);
+								});
 						})
 						.catch(() => {
 							toast.error('Unable to update user profile');

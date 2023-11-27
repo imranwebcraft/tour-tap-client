@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useParams } from 'react-router-dom';
 import useAxiosPublic from '../../Hook/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
@@ -10,6 +11,7 @@ import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const TourGuideDetails = () => {
 	const [loading, setLoading] = useState(false);
@@ -130,7 +132,10 @@ const TourGuideDetails = () => {
 								rows="10"
 							></textarea>
 							<div className="mt-6">
-								<button
+								<motion.button
+									initial={{ scale: 1, opacity: 0.8 }}
+									whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+									whileTap={{ scale: 0.9, transition: { duration: 0.3 } }}
 									className="
 								flex items-center justify-center gap-2
 								w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
@@ -139,7 +144,7 @@ const TourGuideDetails = () => {
 										<AiOutlineLoading3Quarters className="animate-spin text-white" />
 									) : undefined}
 									Post Your Comment
-								</button>
+								</motion.button>
 							</div>
 						</div>
 					</div>
