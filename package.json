@@ -30,6 +30,7 @@
 		"react-simple-typewriter": "^5.0.1",
 		"react-slick": "^0.29.0",
 		"react-tabs": "^6.0.2",
+		"react-tooltip": "^5.24.0",
 		"slick-carousel": "^1.8.1",
 		"sort-by": "^1.2.0",
 		"swiper": "^11.0.5"
