@@ -41,7 +41,7 @@ const SpringModal = ({ isOpen, setIsOpen }) => {
 							<div className="bg-white w-16 h-16 mb-2 rounded-full text-3xl text-indigo-600 grid place-items-center mx-auto">
 								<FiAlertCircle />
 							</div>
-							<h3 className="text-3xl font-bold text-center mb-2">
+							<h3 className="text-3xl font-bold text-center mb-5">
 								One more thing!
 							</h3>
 

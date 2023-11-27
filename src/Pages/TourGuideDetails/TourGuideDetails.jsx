@@ -18,7 +18,6 @@ const TourGuideDetails = () => {
 	const [tourGuideEmail, setTourGuideEmail] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [rating, setRating] = useState(0);
-	const [commentSubmitted, setCommentSubmitted] = useState(false);
 	const { user } = useAuth();
 
 	const { id } = useParams();
@@ -50,10 +49,6 @@ const TourGuideDetails = () => {
 	};
 
 	const handleComment = async (event) => {
-		if (commentSubmitted) {
-			toast.error('You already have a comment');
-		}
-
 		setLoading(true);
 		event.preventDefault();
 		const form = event.target;
@@ -74,7 +69,6 @@ const TourGuideDetails = () => {
 				toast.success('Your comment posted successfull!');
 				form.reset();
 				refetch();
-				setCommentSubmitted(true);
 			});
 		} catch (error) {
 			console.log(error.message);
@@ -199,11 +193,9 @@ const TourGuideDetails = () => {
 								className=" block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-green-300 focus:outline-none focus:ring focus:ring-green-300 disabled:opacity-30 disabled:cursor-not-allowed"
 								cols="30"
 								rows="10"
-								disabled={commentSubmitted}
 							></textarea>
 							<div className="mt-6">
 								<button
-									disabled={commentSubmitted}
 									type="submit"
 									className="
 								flex items-center justify-center gap-2

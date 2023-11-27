@@ -1,7 +1,7 @@
 import TopBanner from '../../Components/TopBanner/TopBanner';
 import Navbar from '../Home/components/Shared/Header/Navbar';
 import Gallery from './Gallery';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../Hook/useAxiosPublic';
 import Container from '../../UI/Container';
@@ -11,18 +11,18 @@ import TourGuideList from './TourGuideList';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hook/useAuth';
 import 'react-datepicker/dist/react-datepicker.css';
-import { useState } from 'react';
 import './datePicker.css';
 import useTourGuide from '../../Hook/useTourGuide';
 import Modal from './Modal';
 import { toast } from 'react-hot-toast';
+import { useLocation } from 'react-router-dom';
 
 const PackageDetails = () => {
-	const [loading, setLoading] = useState(false);
 	const { user } = useAuth();
 	const [tourGuides] = useTourGuide();
-	const [tourGuide, setTourFuide] = useState('');
 	const axiosPublic = useAxiosPublic();
+	const location = useLocation();
+	const navigate = useNavigate();
 
 	const {
 		register,
@@ -66,10 +66,17 @@ const PackageDetails = () => {
 			.post('/book-package', bookignData)
 			.then(() => {
 				toast.success('Your booking Confirmed!');
+				reset();
 			})
 			.catch((err) => {
 				toast.error(err.message);
 			});
+	};
+
+	const handleBookNow = () => {
+		if (!user) {
+			navigate('/login', { state: { from: location } });
+		}
 	};
 
 	return (
@@ -206,19 +213,9 @@ const PackageDetails = () => {
 							</div>
 
 							{/* Booking confirm button */}
-							{/* <div className="mt-6">
-								<button
-									type="submit"
-									className="flex items-center justify-center gap-2
-								w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
-								>
-									{loading ? (
-										<AiOutlineLoading3Quarters className="animate-spin text-white" />
-									) : undefined}
-									Book This Package
-								</button>
-							</div> */}
-							<Modal></Modal>
+							<div onClick={handleBookNow}>
+								<Modal></Modal>
+							</div>
 						</form>
 					</div>
 				</Container>

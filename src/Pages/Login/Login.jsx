@@ -10,10 +10,14 @@ import { useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import useAuth from '../../Hook/useAuth';
 import { motion } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Login = () => {
 	const [loading, setLoading] = useState(false);
 	const { logIn } = useAuth();
+
+	const location = useLocation();
+	const navigate = useNavigate();
 
 	const {
 		register,
@@ -29,6 +33,7 @@ const Login = () => {
 			.then((result) => {
 				console.log(result.user);
 				toast.success('Login successfull');
+				navigate(location.state ? location.state.from.pathname : '/');
 				setLoading(false);
 				reset();
 			})

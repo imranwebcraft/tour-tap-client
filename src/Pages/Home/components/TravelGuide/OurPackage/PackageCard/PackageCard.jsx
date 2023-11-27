@@ -52,7 +52,7 @@ const PackageCard = ({ packageItem }) => {
 			<div className="mx-auto flex flex-col h-full overflow-hidden  justify-center bg-white rounded-2xl shadow-md shadow-gray-400/20 group-hover:shadow-lg transition-all duration-300">
 				<div className=" relative mb-2">
 					<img
-						className="aspect-video  rounded-t-2xl object-cover object-center group-hover:scale-105 group-hover:rotate-1 transition-all duration-300"
+						className="aspect-video  rounded-t-2xl object-cover object-center group-hover:scale-105 transition-all duration-300"
 						src={image}
 						alt={tripTitle}
 					/>
