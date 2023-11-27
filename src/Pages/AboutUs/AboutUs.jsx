@@ -1,10 +1,21 @@
+import { Helmet } from 'react-helmet-async';
 import Container from '../../UI/Container';
 import Navbar from '../Home/components/Shared/Header/Navbar';
 import AboutUsBanner from './AboutUsBanner';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const AboutUs = () => {
+	const location = useLocation();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
+
 	return (
 		<div>
+			<Helmet>
+				<title>Tour Tap | About Us</title>
+			</Helmet>
 			<Navbar screen={false} route="about">
 				<AboutUsBanner></AboutUsBanner>
 			</Navbar>

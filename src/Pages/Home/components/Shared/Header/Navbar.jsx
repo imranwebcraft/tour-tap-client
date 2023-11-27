@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../../../../../Components/Logo';
 import Button from '../../../../../Components/Button/Button';
 import './navbar.css';
@@ -14,6 +14,8 @@ const Navbar = ({ screen, children, route }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isToggleOpen, setIsToggleOpen] = useState(false);
 	const { user, logOut } = useAuth();
+
+	const navigate = useNavigate();
 
 	// Dark mode control
 	const [theme, setTheme] = useState('light');
@@ -60,6 +62,7 @@ const Navbar = ({ screen, children, route }) => {
 		logOut()
 			.then(() => {
 				toast.success('Log out successfull');
+				navigate('/login');
 			})
 			.catch((err) => {
 				toast.error(err.message);
@@ -93,7 +96,7 @@ const Navbar = ({ screen, children, route }) => {
 							>
 								<div className=" flex items-center gap-2">
 									<Logo></Logo>
-									<h3 className=" text-white text-lg lg:text-xl font-bold">
+									<h3 className=" text-white text-lg lg:text-xl font-bold pt-2">
 										Tour-Tap
 									</h3>
 								</div>

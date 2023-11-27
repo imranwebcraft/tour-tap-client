@@ -1,12 +1,19 @@
+import { useEffect } from 'react';
 import TopBanner from '../../Components/TopBanner/TopBanner';
 import useStory from '../../Hook/useStory';
 import Container from '../../UI/Container';
 import SectionContainer from '../../UI/SectionContainer';
 import Navbar from '../Home/components/Shared/Header/Navbar';
 import StoryCard from '../Home/components/TourStory/StoryCard';
-
+import { useLocation } from 'react-router-dom';
 const AllStory = () => {
 	const [stories] = useStory();
+
+	const location = useLocation();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
+
 	return (
 		<>
 			<Navbar route={'story'} screen={false}>

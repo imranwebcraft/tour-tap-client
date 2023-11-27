@@ -6,11 +6,12 @@ import './login.css';
 import SocialLogin from './Shared/SocialLogin';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import useAuth from '../../Hook/useAuth';
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 	const [loading, setLoading] = useState(false);
@@ -18,6 +19,10 @@ const Login = () => {
 
 	const location = useLocation();
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
 
 	const {
 		register,
@@ -45,6 +50,9 @@ const Login = () => {
 
 	return (
 		<div>
+			<Helmet>
+				<title>Tour Tap | Login</title>
+			</Helmet>
 			<NavbarSignle></NavbarSignle>
 			<Container>
 				<div className="flex w-full mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 my-16">

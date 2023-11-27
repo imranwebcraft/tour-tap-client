@@ -13,6 +13,7 @@ import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 import useAuth from '../../Hook/useAuth';
 import { toast } from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const TourGuideDetails = () => {
 	const [tourGuideEmail, setTourGuideEmail] = useState(null);
@@ -79,6 +80,9 @@ const TourGuideDetails = () => {
 
 	return (
 		<div>
+			<Helmet>
+				<title>Tour Tap | {name}s</title>
+			</Helmet>
 			<Navbar route={'tourGuideDetails'} screen={false}>
 				<TopBanner bannerText={'Tour Guides Details'}></TopBanner>
 			</Navbar>

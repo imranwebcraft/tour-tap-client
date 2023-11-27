@@ -12,6 +12,7 @@ import AllStory from '../Pages/AllStory/AllStory';
 import PackageDetails from '../Pages/PackageDetails/PackageDetails';
 import TourGuideDetails from '../Pages/TourGuideDetails/TourGuideDetails';
 import StoryDetails from '../Pages/StoryDetails/StoryDetails';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
 	{

@@ -16,6 +16,8 @@ import useTourGuide from '../../Hook/useTourGuide';
 import Modal from './Modal';
 import { toast } from 'react-hot-toast';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 const PackageDetails = () => {
 	const { user } = useAuth();
@@ -23,6 +25,10 @@ const PackageDetails = () => {
 	const axiosPublic = useAxiosPublic();
 	const location = useLocation();
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
 
 	const {
 		register,
@@ -81,6 +87,9 @@ const PackageDetails = () => {
 
 	return (
 		<div>
+			<Helmet>
+				<title>Tour Tap | Package Details</title>
+			</Helmet>
 			<Navbar route={'packages'} screen={false}>
 				<TopBanner bannerText={'Package Details'}></TopBanner>
 			</Navbar>

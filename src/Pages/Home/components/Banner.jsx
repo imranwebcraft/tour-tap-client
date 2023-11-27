@@ -11,7 +11,11 @@ const Banner = () => {
 				{/* <span className=" text-center text-white bg-green-200 bg-opacity-50 max-w-xs rounded-md px-2 py-1">
                 Explore the wonderful Bangladesh!
             </span> */}
-				<h1 className="text-white text-6xl font-bold tracking-wide max-w-5xl text-center">
+				<h1
+					data-aos="zoom-in"
+					data-aos-duration="1200"
+					className="text-white text-6xl font-bold tracking-wide max-w-5xl text-center"
+				>
 					Welcome to Tour-Tap!
 				</h1>
 				<span className=" text-2xl font-black lg:text-6xl  bg-clip-text bg-gradient-to-tl from-green-500 to-sky-400 text-transparent">
@@ -34,18 +38,6 @@ const Banner = () => {
 						/>
 						<img
 							className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700"
-							src="https://source.unsplash.com/40x40/?portrait?1"
-						/>
-						<img
-							className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700"
-							src="https://source.unsplash.com/40x40/?portrait?1"
-						/>
-						<img
-							className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700"
-							src="https://source.unsplash.com/40x40/?portrait?1"
-						/>
-						<img
-							className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700"
 							src="https://source.unsplash.com/40x40/?portrait?2"
 						/>
 						<img
@@ -55,6 +47,18 @@ const Banner = () => {
 						<img
 							className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700"
 							src="https://source.unsplash.com/40x40/?portrait?4"
+						/>
+						<img
+							className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+							src="https://source.unsplash.com/40x40/?portrait?5"
+						/>
+						<img
+							className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+							src="https://source.unsplash.com/40x40/?portrait?6"
+						/>
+						<img
+							className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+							src="https://source.unsplash.com/40x40/?portrait?7"
 						/>
 						<span className="flex items-center justify-center w-10 h-10 font-semibold border rounded-full dark:bg-gray-900 text-white dark:border-gray-700">
 							+
@@ -68,7 +72,7 @@ const Banner = () => {
 				<div className=" flex flex-col items-center gap-4">
 					<Button buttonText={'Find Out More'}></Button>
 					<motion.button
-						initial={{ scale: 0.2, opacity: 0 }}
+						initial={{ scale: 0, opacity: 0 }}
 						animate={{ scale: 1, opacity: 1 }}
 						transition={{ duration: 0.2 }}
 						className=" group text-lg flex items-center gap-1 text-white border border-rose-500 px-3 py-2 rounded-lg hover:bg-rose-500 hover:text-white transition-all ease-in-out duration-300"

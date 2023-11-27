@@ -9,10 +9,11 @@ import SocialLogin from '../Login/Shared/SocialLogin';
 import useAuth from '../../Hook/useAuth';
 import useAxiosPublic from '../../Hook/useAxiosPublic';
 import { toast } from 'react-hot-toast';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { motion } from 'framer-motion';
-
+import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 const image_hosting_key = import.meta.env.VITE_IMAGE_UPLOAD_API_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
@@ -21,6 +22,11 @@ const Register = () => {
 	const { createUser, updateUserProfile } = useAuth();
 	const axiosPublic = useAxiosPublic();
 	const navigate = useNavigate();
+
+	const location = useLocation();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
 
 	const {
 		register,
@@ -77,6 +83,9 @@ const Register = () => {
 
 	return (
 		<div>
+			<Helmet>
+				<title>Tour Tap | Register</title>
+			</Helmet>
 			<NavbarSignle></NavbarSignle>
 			<Container>
 				<div className="flex w-full  mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 my-16">
