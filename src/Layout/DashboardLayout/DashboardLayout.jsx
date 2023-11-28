@@ -125,7 +125,7 @@ const DashboardLayout = () => {
 							)}
 
 							{/* Tour Guide Route START*/}
-							{role === 'tourguide' && (
+							{role === 'tourGuide' && (
 								<>
 									{/* Tour Guide PRofile */}
 									<li className="rounded-md">
