@@ -58,9 +58,9 @@ const PackageDetails = () => {
 			touristImage: user?.photoURL,
 
 			date: data?.date,
-			status: 'pending',
+			status: 'In review',
 
-			tourGuideEmail: data.tourGuide,
+			tourGuideName: data.tourGuide,
 
 			image: image,
 			tripTitle: tripTitle,
@@ -208,7 +208,7 @@ const PackageDetails = () => {
 										Select your tour guide
 									</option>
 									{tourGuides.map((tourGuide, i) => (
-										<option key={i} value={tourGuide.email}>
+										<option key={i} value={tourGuide.name}>
 											{tourGuide.name}
 										</option>
 									))}

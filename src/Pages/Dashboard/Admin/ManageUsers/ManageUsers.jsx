@@ -61,8 +61,8 @@ const ManageUsers = () => {
 						Total Users: {users.length}
 					</h2>
 					<div className="overflow-x-auto">
-						<table className="min-w-full text-xs">
-							<thead className="dark:bg-gray-700">
+						<table className="min-w-full">
+							<thead className="dark:bg-gray-700 bg-purple-500 text-white">
 								<tr className="text-center">
 									<th className="p-3">#</th>
 									<th className="p-3">Name</th>
@@ -75,7 +75,7 @@ const ManageUsers = () => {
 								{users?.map((user, index) => (
 									<tr
 										key={index}
-										className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900"
+										className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900 bg-gray-100 text-black"
 									>
 										<td className="p-3">
 											<p>{index + 1}</p>
@@ -102,7 +102,7 @@ const ManageUsers = () => {
 												{/* Make Tour Guide */}
 												<button
 													onClick={() => handleMakeTourGuide(user._id)}
-													className="px-4 py-2 hover:bg-green-600 transition-all duration-300 text-white font-semibold rounded-md bg-green-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-500"
+													className="px-4 py-2 hover:bg-blue-600 transition-all duration-300 text-white font-semibold rounded-md bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-500"
 													disabled={disabledButtons[user._id]}
 												>
 													<span>Make Tour Guide</span>
