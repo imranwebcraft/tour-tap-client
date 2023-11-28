@@ -22,6 +22,7 @@ const TourGuideDetails = () => {
 	const { user } = useAuth();
 
 	const { id } = useParams();
+
 	const axiosPublic = useAxiosPublic();
 
 	const { data: signleTourGuide = {} } = useQuery({
@@ -81,7 +82,7 @@ const TourGuideDetails = () => {
 	return (
 		<div>
 			<Helmet>
-				<title>Tour Tap | {name}s</title>
+				<title> Tour Guide Details </title>
 			</Helmet>
 			<Navbar route={'tourGuideDetails'} screen={false}>
 				<TopBanner bannerText={'Tour Guides Details'}></TopBanner>

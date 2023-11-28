@@ -14,6 +14,8 @@ const TourTypeCard = () => {
 	const { item } = useParams();
 	const axiosPublic = useAxiosPublic();
 
+	console.log(item);
+
 	const { data: tourtypes = [] } = useQuery({
 		queryKey: ['tour-tyoe'],
 		queryFn: async () => {
@@ -21,8 +23,6 @@ const TourTypeCard = () => {
 			return res.data;
 		},
 	});
-
-	console.log(tourtypes.length);
 
 	return (
 		<div>
@@ -41,7 +41,7 @@ const TourTypeCard = () => {
 						</div>
 					)}
 
-					<div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+					<div className=" grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 						{tourtypes?.map((packageItem) => (
 							<PackageCard
 								key={packageItem._id}
