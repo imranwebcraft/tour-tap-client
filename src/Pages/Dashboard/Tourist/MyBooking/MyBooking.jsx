@@ -36,41 +36,41 @@ const MyBooking = () => {
 								{bookings?.map((booking, index) => (
 									<tr
 										key={index}
-										className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900 bg-gray-100 text-black"
+										className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900 bg-gray-50 text-black"
 									>
 										<td className="p-3">
 											<p>{index + 1}</p>
 										</td>
 										<td className="p-3">
-											<p>{booking.tripTitle}</p>
+											<p>{booking?.tripTitle}</p>
 										</td>
 										<td className="p-3">
 											<p>
-												{booking.tourGuideName
+												{booking?.tourGuideName
 													? booking?.tourGuideName
 													: 'Not Given'}
 											</p>
 										</td>
 										<td className="p-3">
-											<p className="capitalize">{booking.date}</p>
+											<p className="capitalize">{booking?.date}</p>
 										</td>
 										<td className="p-3">
-											<p className="capitalize">{booking.price}</p>
+											<p className="capitalize">{booking?.price} TK</p>
 										</td>
 										<td className="p-3">
-											<p className="capitalize">{booking.status}</p>
+											<p className="capitalize">{booking?.status}</p>
 										</td>
 										<td className="p-3 text-left">
 											<div className=" space-x-2">
 												{/* Pay Button */}
-												{booking.status === 'Accepted' && (
-													<button className="px-4 py-2 hover:bg-green-600 transition-all duration-300 text-white font-semibold rounded-md bg-green-500">
+												{booking?.status === 'Accepted' && (
+													<button className="px-3 py-1 hover:bg-green-600 transition-all duration-300 text-white font-semibold rounded-md bg-green-500">
 														<span>Pay</span>
 													</button>
 												)}
 
-												{booking.status === 'In review' && (
-													<button className="px-4 py-2 hover:bg-red-600 transition-all duration-300 text-white font-semibold rounded-md bg-red-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-500">
+												{booking?.status === 'In review' && (
+													<button className="px-3 py-1 hover:bg-red-600 transition-all duration-300 text-white font-semibold rounded-md bg-red-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-500">
 														<span>Cancel</span>
 													</button>
 												)}
