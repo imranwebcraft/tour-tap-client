@@ -1,8 +1,60 @@
+import { useState } from 'react';
+import SectionTitle from '../../../../Components/SectionTitle/SectionTitle';
 import useAuth from '../../../../Hook/useAuth';
+import SectionContainer from '../../../../UI/SectionContainer';
+import useAxiosPublic from '../../../../Hook/useAxiosPublic';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
+import Container from '../../../../UI/Container';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+
+// Image hosting
+const image_hosting_key = import.meta.env.VITE_IMAGE_UPLOAD_API_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const TourGuideProfile = () => {
 	const { user } = useAuth();
 	const name = user?.displayName;
+	const email = user?.email;
+
+	const [loading, setLoading] = useState(false);
+	const axiosPublic = useAxiosPublic();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset,
+	} = useForm();
+
+	const onSubmit = async (data) => {
+		console.log(data);
+		setLoading(true);
+		// Image as form data
+		const formData = { image: data.image[0] };
+		const res = await axiosPublic.post(image_hosting_api, formData, {
+			headers: {
+				'Content-Type': 'multipart/form-data',
+			},
+		});
+
+		console.log(res);
+
+		if (res?.data?.success) {
+			const tourGuideData = {
+				name: name,
+				image: res?.data?.data.display_url,
+				email: email,
+				phone: data.phone,
+				education: data.education,
+			};
+			const tourGuideRes = await axiosPublic.post('/tourGuide', tourGuideData);
+			if (tourGuideRes.data) {
+				toast.success('Successfully created tour guide profile');
+				reset();
+				setLoading(false);
+			}
+		}
+	};
 
 	return (
 		<div>
@@ -147,13 +199,105 @@ const TourGuideProfile = () => {
 				</div>
 
 				{/* Story add form */}
-				{/* 
+
 				<SectionContainer>
 					<SectionTitle
-						heading={'Share Your Story'}
-						subHeading={'Your Story'}
+						heading={'Make Your Guide Profile'}
+						subHeading={'Add Profile'}
 					></SectionTitle>
-				</SectionContainer> */}
+					<Container>
+						<form onSubmit={handleSubmit(onSubmit)}>
+							{/* -----------Name------------ */}
+							<div className="mt-4">
+								<label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+									Name
+								</label>
+								<input
+									type="text"
+									className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-green-300 focus:outline-none focus:ring focus:ring-green-300 disabled:opacity-50 disabled:bg-gray-300 disabled:cursor-not-allowed"
+									defaultValue={name}
+									disabled
+								/>
+							</div>
+							{/* -----------Email------------ */}
+							<div className="mt-4">
+								<label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+									Email
+								</label>
+								<input
+									type="email"
+									className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-green-300 focus:outline-none focus:ring focus:ring-green-300 disabled:opacity-50 disabled:bg-gray-300 disabled:cursor-not-allowed"
+									defaultValue={email}
+									disabled
+								/>
+							</div>
+							{/* -----------Education------------ */}
+							<div className="mt-4">
+								<label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+									Education
+								</label>
+								<input
+									{...register('education', { required: true })}
+									type="text"
+									className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-green-300 focus:outline-none focus:ring focus:ring-green-300"
+									placeholder="Enter your education credentials"
+								/>
+								{errors.education?.type === 'required' && (
+									<span className="text-sm text-red-600">
+										Email is required*
+									</span>
+								)}
+							</div>
+							{/* -----------Phone------------ */}
+							<div className="mt-4">
+								<label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+									Phone
+								</label>
+								<input
+									{...register('phone', { required: true, maxLength: 11 })}
+									type="number"
+									className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-green-300 focus:outline-none focus:ring focus:ring-green-300"
+									placeholder="Enter your contact "
+								/>
+								{errors.phone?.type === 'required' && (
+									<span className="text-sm text-red-600">
+										Phone is required*
+									</span>
+								)}
+							</div>
+							{/* -----------Image------------ */}
+							<div>
+								<label className="block mt-3 mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+									Place Image
+								</label>
+								<label className="flex items-center px-3 py-3 mx-auto text-center bg-white border-2 border-dashed rounded-lg cursor-pointer dark:border-gray-600 dark:bg-gray-900">
+									<input
+										{...register('image', { required: true })}
+										type="file"
+									/>
+									{errors.image?.type === 'required' && (
+										<p className="text-sm text-red-500">
+											Image field is required*
+										</p>
+									)}
+								</label>
+							</div>
+
+							<div className="mt-6">
+								<button
+									className="
+								flex items-center justify-center gap-2
+								w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+								>
+									{loading ? (
+										<AiOutlineLoading3Quarters className="animate-spin text-white" />
+									) : undefined}
+									Add As Tour Guide
+								</button>
+							</div>
+						</form>
+					</Container>
+				</SectionContainer>
 			</div>
 		</div>
 	);

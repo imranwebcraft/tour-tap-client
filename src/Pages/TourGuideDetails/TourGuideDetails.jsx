@@ -6,7 +6,7 @@ import Navbar from '../Home/components/Shared/Header/Navbar';
 import TopBanner from '../../Components/TopBanner/TopBanner';
 import SectionContainer from '../../UI/SectionContainer';
 import Container from '../../UI/Container';
-import { MdCastForEducation } from 'react-icons/md';
+import { MdCastForEducation, MdOutlinePhone } from 'react-icons/md';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
@@ -34,8 +34,7 @@ const TourGuideDetails = () => {
 		},
 	});
 
-	const { name, image, email, education, skills, workExperience } =
-		signleTourGuide || {};
+	const { name, image, email, education, phone } = signleTourGuide || {};
 
 	// Get comments from database
 	const { data: comments = [], refetch } = useQuery({
@@ -122,38 +121,11 @@ const TourGuideDetails = () => {
 										<MdCastForEducation></MdCastForEducation>
 										<span className="dark:text-gray-400">{education}</span>
 									</span>
+									<span className="flex items-center space-x-2">
+										<MdOutlinePhone></MdOutlinePhone>
+										<span className="dark:text-gray-400">{phone}</span>
+									</span>
 								</div>
-							</div>
-						</div>
-						<div className=" grid grid-cols-2">
-							<div className="my-5">
-								<p className=" text-2xl font-bold">Skills</p>
-								{skills?.map((skill, i) => (
-									<div key={i} className=" flex flex-col gap-1 my-5">
-										<span>
-											<span className="text-xl">Name:</span> {skill.name}
-										</span>
-										<span>
-											<span className="text-xl">Level:</span> {skill.level}
-										</span>
-									</div>
-								))}
-							</div>
-							<div className=" my-5">
-								<p className=" text-2xl font-bold">Work Experience</p>
-								{workExperience?.map((work, i) => (
-									<div key={i} className=" flex flex-col gap-1 my-5">
-										<span>
-											<span className="text-xl">Company:</span> {work.company}
-										</span>
-										<span>
-											<span className="text-xl">Position:</span> {work.position}
-										</span>
-										<span>
-											<span className="text-xl">Year:</span> {work.year}
-										</span>
-									</div>
-								))}
 							</div>
 						</div>
 					</div>
