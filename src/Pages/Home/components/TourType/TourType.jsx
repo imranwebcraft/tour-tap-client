@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 const TourType = () => {
 	const tourType = ['Adventure', 'Beatch', 'Safari', 'Cultural', 'Wellness'];
 	const [selectedType, setSelectedType] = useState();
-	console.log(selectedType);
 
 	var settings = {
 		dots: false,

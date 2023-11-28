@@ -32,7 +32,6 @@ const Login = () => {
 
 	const onSubmit = (data) => {
 		setLoading(true);
-		console.log(data);
 		logIn(data?.email, data.password)
 			.then((result) => {
 				console.log(result.user);

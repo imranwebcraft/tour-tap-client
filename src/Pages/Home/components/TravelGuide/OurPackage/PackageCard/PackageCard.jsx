@@ -18,7 +18,6 @@ const PackageCard = ({ packageItem }) => {
 
 	const handleWishlist = async () => {
 		if (!wishlist) {
-			console.log('Wishlist true');
 			const wishlistData = {
 				email: user?.email,
 				image: image,

@@ -50,8 +50,6 @@ const PackageDetails = () => {
 		singlePackage || {};
 
 	const onSubmit = async (data) => {
-		console.log(data);
-		// Todo: status = "In review"
 		const bookignData = {
 			touristName: user?.displayName,
 			touristEmail: user?.email,

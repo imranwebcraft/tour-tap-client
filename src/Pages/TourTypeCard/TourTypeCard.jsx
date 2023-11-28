@@ -13,9 +13,6 @@ import nothingfound from '../../assets/Animation/nothingfound.json';
 const TourTypeCard = () => {
 	const { item } = useParams();
 	const axiosPublic = useAxiosPublic();
-
-	console.log(item);
-
 	const { data: tourtypes = [] } = useQuery({
 		queryKey: ['tour-tyoe'],
 		queryFn: async () => {

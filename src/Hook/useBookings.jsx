@@ -11,7 +11,6 @@ const useBookings = () => {
 	const { data: bookings = [], refetch } = useQuery({
 		queryKey: ['bookings'],
 		queryFn: async () => {
-			console.log(email);
 			const res = await axiosPublic.get(`/book-package/${email}`);
 			return res.data;
 		},

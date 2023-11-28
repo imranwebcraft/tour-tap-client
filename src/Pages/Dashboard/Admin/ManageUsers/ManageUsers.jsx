@@ -21,7 +21,6 @@ const ManageUsers = () => {
 	// Make admin events handler
 	const handleMakeAdmin = async (id) => {
 		const role = { role: 'admin' };
-		console.log(id, role);
 		setDisabledButtons((prevButtons) => ({ ...prevButtons, [id]: true }));
 		const res = await axiosSecure.patch(`/users/${id}`, role);
 		if (res?.data) {
@@ -36,7 +35,6 @@ const ManageUsers = () => {
 	// Make Tour Guide events handler
 	const handleMakeTourGuide = async (id) => {
 		const role = { role: 'tourGuide' };
-		console.log(id, role);
 		setDisabledButtons((prevButtons) => ({ ...prevButtons, [id]: true }));
 		const res = await axiosSecure.patch(`/users/${id}`, role);
 		if (res?.data) {

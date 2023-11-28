@@ -27,7 +27,6 @@ const TouristProfile = () => {
 	} = useForm();
 
 	const onSubmit = async (data) => {
-		console.log(data);
 		setLoading(true);
 		// Image as form data
 		const formData = { image: data.image[0] };

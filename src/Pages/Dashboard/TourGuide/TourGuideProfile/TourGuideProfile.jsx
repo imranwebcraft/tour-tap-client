@@ -27,7 +27,6 @@ const TourGuideProfile = () => {
 	} = useForm();
 
 	const onSubmit = async (data) => {
-		console.log(data);
 		setLoading(true);
 		// Image as form data
 		const formData = { image: data.image[0] };
@@ -36,8 +35,6 @@ const TourGuideProfile = () => {
 				'Content-Type': 'multipart/form-data',
 			},
 		});
-
-		console.log(res);
 
 		if (res?.data?.success) {
 			const tourGuideData = {
