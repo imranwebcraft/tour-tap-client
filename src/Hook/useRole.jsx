@@ -5,7 +5,6 @@ const useRole = () => {
 	const { user } = useAuth();
 	const axiosPublic = useAxiosPublic();
 	const email = user?.email;
-	console.log(email);
 
 	const { data: role } = useQuery({
 		queryKey: ['role'],

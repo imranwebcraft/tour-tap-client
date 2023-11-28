@@ -76,7 +76,7 @@ const PackageCard = ({ packageItem }) => {
 					</small>
 					<h1 className="text-2xl font-medium text-gray-900">{tripTitle}</h1>
 					<p>
-						From <span className=" font-bold text-orange-500">$ {price}</span>
+						From <span className=" font-bold text-orange-500">TK {price}</span>
 					</p>
 				</div>
 				<Link to={`/packages/${_id}`} className="mt-auto p-6">

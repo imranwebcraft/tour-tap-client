@@ -50,7 +50,7 @@ const AdminProfile = () => {
 									transform="rotate(-45 416 96)"
 								></rect>
 							</svg>
-							<h1 className="text-xl font-semibold">Stockholm</h1>
+							<h1 className="text-xl font-semibold">Banngladesh</h1>
 						</div>
 						<span className="font-bold text-8xl">14°</span>
 					</div>

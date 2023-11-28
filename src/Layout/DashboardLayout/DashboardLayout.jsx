@@ -13,7 +13,7 @@ const DashboardLayout = () => {
 	return (
 		<div className=" flex gap-10">
 			{/* Sidebar */}
-			<div className="flex flex-col h-full p-3 w-80 bg-emerald-500 dark:bg-gray-900 dark:text-gray-100 border-r min-h-screen pl-5">
+			<div className="flex flex-col  p-3 w-80 bg-emerald-500 dark:bg-gray-900 dark:text-gray-100 border-r min-h-screen pl-5">
 				<div className="space-y-3">
 					{/* Logo */}
 					<Link
