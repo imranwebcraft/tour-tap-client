@@ -25,7 +25,7 @@ const StoryDetailsContent = ({ story }) => {
 				<div>
 					<h3 className="text-xl font-medium text-slate-700">
 						{/* Todo: Story Title will goes here */}
-						Story Title
+						{story.title ? story.title : 'No Title'}
 					</h3>
 					<p className="text-sm text-slate-400">{story.authorName}</p>
 				</div>
@@ -35,7 +35,7 @@ const StoryDetailsContent = ({ story }) => {
 					{story.date}
 				</time>
 
-				<p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+				<p className="mt-2 text-sm/relaxed text-gray-500">
 					{story.storyDetails}
 				</p>
 			</div>

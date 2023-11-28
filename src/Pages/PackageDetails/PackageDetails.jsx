@@ -188,7 +188,7 @@ const PackageDetails = () => {
 
 									{errors.date?.type === 'required' && (
 										<span className="text-sm text-red-600">
-											Select a tour guide is required*
+											Date is required*
 										</span>
 									)}
 								</div>

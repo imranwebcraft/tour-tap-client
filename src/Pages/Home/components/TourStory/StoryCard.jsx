@@ -18,7 +18,9 @@ const StoryCard = ({ story }) => {
 						</p>
 						<a className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700">
 							{/* TODO: Add strory title here */}
-							<p className="text-2xl font-bold leading-5">Diving to the deep</p>
+							<p className="text-2xl font-bold leading-5">
+								{story.title ? story?.title : 'Title Not added'}
+							</p>
 						</a>
 						<div>
 							<figure className="inline-block">
