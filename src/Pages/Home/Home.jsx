@@ -1,4 +1,6 @@
 import Banner from './components/Banner';
+import Download from './components/Download/Download';
+import NewsLetter from './components/NewsLetter/NewsLetter';
 import Navbar from './components/Shared/Header/Navbar';
 import TourStory from './components/TourStory/TourStory';
 import TourType from './components/TourType/TourType';
@@ -13,6 +15,8 @@ const Home = () => {
 			<TravelGuide></TravelGuide>
 			<TourType></TourType>
 			<TourStory></TourStory>
+			<NewsLetter></NewsLetter>
+			<Download></Download>
 		</div>
 	);
 };
