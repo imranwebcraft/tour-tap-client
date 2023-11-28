@@ -2,10 +2,39 @@
 import SectionTitle from '../../../../Components/SectionTitle/SectionTitle';
 import Container from '../../../../UI/Container';
 import useBookings from '../../../../Hook/useBookings';
+import useAxiosPublic from '../../../../Hook/useAxiosPublic';
+import { toast } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 const MyBooking = () => {
 	const [bookings, refetch] = useBookings();
-	console.log(bookings);
+	const axiosPublic = useAxiosPublic();
+
+	const handleBookingCancel = async (id) => {
+		Swal.fire({
+			title: 'Are you sure?',
+			text: 'Do you really want to cancel?',
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!',
+		}).then(async (result) => {
+			if (result.isConfirmed) {
+				const res = await axiosPublic.delete(`/book-package/${id}`);
+				if (res?.data) {
+					Swal.fire({
+						title: 'Deleted!',
+						text: 'Booking cancelled Successfully',
+						icon: 'success',
+					});
+					refetch();
+				} else {
+					toast.error('Something went wrong');
+				}
+			}
+		});
+	};
 
 	return (
 		<div>
@@ -70,7 +99,10 @@ const MyBooking = () => {
 												)}
 
 												{booking?.status === 'In review' && (
-													<button className="px-3 py-1 hover:bg-red-600 transition-all duration-300 text-white font-semibold rounded-md bg-red-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-500">
+													<button
+														onClick={() => handleBookingCancel(booking._id)}
+														className="px-3 py-1 hover:bg-red-600 transition-all duration-300 text-white font-semibold rounded-md bg-red-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-500"
+													>
 														<span>Cancel</span>
 													</button>
 												)}

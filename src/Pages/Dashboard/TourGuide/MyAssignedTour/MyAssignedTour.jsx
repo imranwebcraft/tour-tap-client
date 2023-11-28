@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 import SectionTitle from '../../../../Components/SectionTitle/SectionTitle';
 import useAuth from '../../../../Hook/useAuth';
 import useAxiosPublic from '../../../../Hook/useAxiosPublic';
 import Container from '../../../../UI/Container';
 import { useQuery } from '@tanstack/react-query';
+import { toast } from 'react-hot-toast';
 
 const MyAssignedTour = () => {
 	const axiosPublic = useAxiosPublic();
@@ -16,6 +18,26 @@ const MyAssignedTour = () => {
 			return res.data;
 		},
 	});
+
+	const handleAccept = async (work) => {
+		const status = { status: 'Accepted' };
+		const res = await axiosPublic.patch(`/book-package/${work._id}`, status);
+		if (res?.data) {
+			toast.success(`You accept ${work.touristName}'s bookings`);
+		} else {
+			toast.error('Something went wrong');
+		}
+	};
+
+	const handleReject = async (work) => {
+		const status = { status: 'Rejected' };
+		const res = await axiosPublic.patch(`/book-package/${work._id}`, status);
+		if (res?.data) {
+			toast.success(`You Reject ${work.touristName}'s bookings`);
+		} else {
+			toast.error('Something went wrong');
+		}
+	};
 
 	return (
 		<div>
@@ -66,11 +88,17 @@ const MyAssignedTour = () => {
 										<td className="p-3 text-center">
 											<div className=" space-x-2">
 												{/* Pay Button */}
-												<button className="px-3 py-1 hover:bg-green-600 transition-all duration-300 text-white font-semibold rounded-md bg-green-500">
+												<button
+													onClick={() => handleAccept(work)}
+													className="px-3 py-1 hover:bg-green-600 transition-all duration-300 text-white font-semibold rounded-md bg-green-500"
+												>
 													<span>Accept</span>
 												</button>
 
-												<button className="px-3 py-1 hover:bg-red-600 transition-all duration-300 text-white font-semibold rounded-md bg-red-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-500">
+												<button
+													onClick={() => handleReject(work)}
+													className="px-3 py-1 hover:bg-red-600 transition-all duration-300 text-white font-semibold rounded-md bg-red-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-500"
+												>
 													<span>Reject</span>
 												</button>
 											</div>
