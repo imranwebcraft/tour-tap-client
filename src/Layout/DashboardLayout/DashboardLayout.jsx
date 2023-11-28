@@ -22,7 +22,7 @@ const DashboardLayout = () => {
 					>
 						<Logo></Logo>
 						<h3 className=" text-white text-lg lg:text-xl font-bold pt-2">
-							Tour-Tap
+							Tour-Tap Home
 						</h3>
 					</Link>
 					<div className="flex-1">
@@ -32,11 +32,11 @@ const DashboardLayout = () => {
 							{role === 'admin' && (
 								<>
 									{/* Admin Profile */}
-									<li className="">
+									<li>
 										<NavLink
 											to={'/dashboard/admin-profile'}
 											className={({ isActive }) =>
-												isActive ? 'text-white font-medium' : ''
+												isActive ? 'text-white font-semibold bg-red-500' : ''
 											}
 										>
 											<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">

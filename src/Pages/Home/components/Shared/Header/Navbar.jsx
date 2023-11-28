@@ -114,10 +114,10 @@ const Navbar = ({ screen, children, route }) => {
 								aria-expanded={isToggleOpen ? 'true' : 'false'}
 								aria-label="Toggle navigation"
 							>
-								<div className="absolute top-1/2 left-1/2 w-6 -translate-x-1/2 -translate-y-1/2 transform">
+								<div className="absolute top-1/2 left-1/2 w-6 -translate-x-1/2 -translate-y-1/2 transform ">
 									<span
 										aria-hidden="true"
-										className="absolute block h-0.5 w-9/12 -translate-y-2 transform rounded-full bg-slate-900 transition-all duration-300"
+										className="absolute block h-0.5 w-9/12 -translate-y-2 transform rounded-full bg-slate-900  transition-all duration-300"
 									></span>
 									<span
 										aria-hidden="true"
@@ -132,7 +132,7 @@ const Navbar = ({ screen, children, route }) => {
 							{/*      <!-- Navigation links --> */}
 							<ul
 								aria-label="Select page"
-								className={`text-sm absolute top-0 left-0 z-[-1] h-[28.5rem] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${
+								className={`text-sm absolute top-0 left-0 z-[-1] h-[28.5rem] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-gray-700 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${
 									isToggleOpen
 										? 'visible opacity-100 backdrop-blur-sm'
 										: 'invisible opacity-0'
