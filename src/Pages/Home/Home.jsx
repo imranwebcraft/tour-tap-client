@@ -1,4 +1,5 @@
 import Banner from './components/Banner';
+import CountDown from './components/Countdown/CountDown';
 import Download from './components/Download/Download';
 import NewsLetter from './components/NewsLetter/NewsLetter';
 import Navbar from './components/Shared/Header/Navbar';
@@ -12,6 +13,7 @@ const Home = () => {
 			<Navbar screen={true}>
 				<Banner></Banner>
 			</Navbar>
+			<CountDown></CountDown>
 			<TravelGuide></TravelGuide>
 			<TourType></TourType>
 			<TourStory></TourStory>

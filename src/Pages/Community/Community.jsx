@@ -153,21 +153,24 @@ const Community = () => {
 							<div className="space-y-5 md:space-y-8">
 								<div className="space-y-3">
 									<h2 className="text-2xl font-bold md:text-3xl dark:text-white">
-										Announcing a free plan for small teams
+										Join Our Vibrant Community
 									</h2>
 
 									<p className="text-lg text-gray-800 dark:text-gray-200">
-										At preline, our mission has always been focused on bringing
-										openness and transparency to the design process. We've
-										always believed that by providing a space where designers
-										can share ongoing work not only empowers them to make better
-										products, it also helps them grow.
+										Welcome to our lively and diverse community of fellow
+										travelers, adventure enthusiasts, and curious minds. At
+										Tour-Tap, we believe that journeys are best when shared. Our
+										community is a space where like-minded individuals come
+										together to exchange stories, tips, and inspiration.
 									</p>
 								</div>
 
 								<p className="text-lg text-gray-800 dark:text-gray-200">
-									We're proud to be a part of creating a more open culture and
-									to continue building a product that supports this vision.
+									Immerse yourself in a world of shared experiences, where every
+									adventure becomes a collective memory. Whether you're a
+									seasoned explorer or just starting your journey, our community
+									is the perfect place to connect with others who share your
+									passion for discovery.
 								</p>
 
 								<figure>
@@ -182,24 +185,15 @@ const Community = () => {
 								</figure>
 
 								<p className="text-lg text-gray-800 dark:text-gray-200">
-									As we've grown, we've seen how Preline has helped companies
-									such as Spotify, Microsoft, Airbnb, Facebook, and Intercom
-									bring their designers closer together to create amazing
-									things. We've also learned that when the culture of sharing is
-									brought in earlier, the better teams adapt and communicate
-									with one another.
+									Engage in conversations, share travel anecdotes, and discover
+									hidden gems recommended by fellow community members. From
+									travel hacks to off-the-beaten-path destinations, our
+									community is a treasure trove of valuable insights.
 								</p>
 
 								<p className="text-lg text-gray-800 dark:text-gray-200">
-									That's why we are excited to share that we now have a{' '}
-									<a
-										className="text-blue-600 decoration-2 hover:underline font-medium"
-										href="#"
-									>
-										free version of Preline
-									</a>
-									, which will allow individual designers, startups and other
-									small teams a chance to create a culture of openness early on.
+									nearth the richness of travel tales from our vibrant members
+									who traverse the globe in search of the extraordinary.
 								</p>
 
 								<blockquote className="text-center p-4 sm:px-7">
@@ -230,79 +224,36 @@ const Community = () => {
 									</h3>
 
 									<p className="text-lg text-gray-800 dark:text-gray-200">
-										We know the power of sharing is real, and we want to create
-										an opportunity for everyone to try Preline and explore how
-										transformative open communication can be. Now you can have a
-										team of one or two designers and unlimited spectators (think
-										PMs, management, marketing, etc.) share work and explore the
-										design process earlier.
+										Engage in conversations that transcend borders. Share your
+										favorite travel hacks, seek recommendations, and be inspired
+										by the journeys of fellow explorers. This is where the
+										thrill of adventure meets the warmth of a welcoming
+										community.
 									</p>
 								</div>
 
 								<ul className="list-disc list-outside space-y-5 ps-5 text-lg text-gray-800 dark:text-gray-200">
 									<li className="ps-2">
-										Preline allows us to collaborate in real time and is a
-										really great way for leadership on the team to stay
-										up-to-date with what everybody is working on,"{' '}
-										<a
-											className="text-blue-600 decoration-2 hover:underline font-medium"
-											href="#"
-										>
-											said
-										</a>{' '}
-										Stewart Scott-Curran, Intercom's Director of Brand Design.
+										From hidden gems in bustling cities to serene landscapes off
+										the grid, our community is a melting pot of diverse
+										perspectives and unparalleled insights.
 									</li>
 									<li className="ps-2">
-										Preline opened a new way of sharing. It's a persistent way
-										for everyone to see and absorb each other's work," said
-										David Scott, Creative Director at{' '}
-										<a
-											className="text-blue-600 decoration-2 hover:underline font-medium"
-											href="#"
-										>
-											Eventbrite
-										</a>
-										.
+										Engage in conversations that transcend borders. Share your
+										favorite travel hacks, seek recommendations, and be inspired
+										by the journeys of fellow explorers. This is where the
+										thrill of adventure meets the warmth of a welcoming
+										community.
 									</li>
 								</ul>
 
 								<p className="text-lg text-gray-800 dark:text-gray-200">
-									Small teams and individual designers need a space where they
-									can watch the design process unfold, both for themselves and
-									for the people they work with – no matter if it's a fellow
-									designer, product manager, developer or client. Preline allows
-									you to invite more people into the process, creating a central
-									place for conversation around design. As those teams grow,
-									transparency and collaboration becomes integrated in how they
-									communicate and work together.
+									Connect with kindred spirits, forge new friendships, and
+									embark on a journey where every story is valued. At Tour-Tap,
+									your adventure is not just yours – it's ours. Welcome to a
+									community where the world is your companion, and the adventure
+									never ends.
 								</p>
-
-								<div>
-									<a
-										className="m-1 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-										href="#"
-									>
-										Plan
-									</a>
-									<a
-										className="m-1 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-										href="#"
-									>
-										Web development
-									</a>
-									<a
-										className="m-1 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-										href="#"
-									>
-										Free
-									</a>
-									<a
-										className="m-1 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-										href="#"
-									>
-										Team
-									</a>
-								</div>
 							</div>
 						</div>
 					</div>
