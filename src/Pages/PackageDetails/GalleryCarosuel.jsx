@@ -1,5 +1,10 @@
 import Glide from '@glidejs/glide';
 import { useEffect } from 'react';
+import slider1 from '../../assets/images/Slider/slider1.jpg';
+import slider3 from '../../assets/images/Slider/slider3.jpg';
+import slider5 from '../../assets/images/Slider/slider5.jpg';
+import slider6 from '../../assets/images/Slider/slider6.jpg';
+import slider7 from '../../assets/images/Slider/slider7.jpg';
 
 const GalleryCarosuel = () => {
 	useEffect(() => {
@@ -7,7 +12,7 @@ const GalleryCarosuel = () => {
 			type: 'carousel',
 			focusAt: 'center',
 			perView: 3,
-			autoplay: 3000,
+			autoplay: 1500,
 			animationDuration: 700,
 			gap: 24,
 			classNames: {
@@ -33,37 +38,39 @@ const GalleryCarosuel = () => {
 	return (
 		<>
 			{/*<!-- Component: Carousel with indicators outside --> */}
-			<div className="glide-05 relative w-full">
+			<div className="glide-05 relative w-full py-6">
 				{/*    <!-- Slides --> */}
 				<div className="overflow-hidden" data-glide-el="track">
 					<ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
 						<li>
 							<img
-								src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-03.jpg"
+								src={slider1}
+								className="m-auto max-h-full w-full max-w-full"
+							/>
+						</li>
+
+						<li>
+							<img
+								src={slider3}
+								className="m-auto max-h-full w-full max-w-full"
+							/>
+						</li>
+
+						<li>
+							<img
+								src={slider5}
 								className="m-auto max-h-full w-full max-w-full"
 							/>
 						</li>
 						<li>
 							<img
-								src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-04.jpg"
+								src={slider6}
 								className="m-auto max-h-full w-full max-w-full"
 							/>
 						</li>
 						<li>
 							<img
-								src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-05.jpg"
-								className="m-auto max-h-full w-full max-w-full"
-							/>
-						</li>
-						<li>
-							<img
-								src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-01.jpg"
-								className="m-auto max-h-full w-full max-w-full"
-							/>
-						</li>
-						<li>
-							<img
-								src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-02.jpg"
+								src={slider7}
 								className="m-auto max-h-full w-full max-w-full"
 							/>
 						</li>

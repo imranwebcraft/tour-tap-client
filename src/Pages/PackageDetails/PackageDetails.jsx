@@ -18,6 +18,7 @@ import { toast } from 'react-hot-toast';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
+import GalleryCarosuel from './GalleryCarosuel';
 
 const PackageDetails = () => {
 	const { user } = useAuth();
@@ -92,7 +93,7 @@ const PackageDetails = () => {
 				<TopBanner bannerText={'Package Details'}></TopBanner>
 			</Navbar>
 			{/* Gallery */}
-			<Gallery></Gallery>
+			<GalleryCarosuel></GalleryCarosuel>
 			{/* Package Details */}
 			<SectionContainer>
 				<Container>

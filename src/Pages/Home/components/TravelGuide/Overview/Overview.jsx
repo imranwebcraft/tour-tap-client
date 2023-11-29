@@ -8,9 +8,11 @@ const Overview = () => {
 	return (
 		<div className="space-y-10 flex flex-col-reverse gap-5">
 			<div>
-				<div className="flex gap-10">
+				<div className="flex flex-col lg:flex-row gap-10">
 					{/* Video */}
-					<Video></Video>
+					<div className=" hidden lg:block">
+						<Video></Video>
+					</div>
 					{/* Steps */}
 					<Steps></Steps>
 				</div>
