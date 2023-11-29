@@ -14,16 +14,20 @@ import { useEffect, useState } from 'react';
 import useAuth from '../../Hook/useAuth';
 import { toast } from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
-
+import { useLocation, useNavigate } from 'react-router-dom';
 const TourGuideDetails = () => {
 	const [tourGuideEmail, setTourGuideEmail] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [rating, setRating] = useState(0);
 	const { user } = useAuth();
-
 	const { id } = useParams();
-
+	const navigate = useNavigate();
 	const axiosPublic = useAxiosPublic();
+
+	const location = useLocation();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
 
 	const { data: signleTourGuide = {} } = useQuery({
 		queryKey: ['tourGuide'],
@@ -46,10 +50,21 @@ const TourGuideDetails = () => {
 		enabled: !!tourGuideEmail,
 	});
 	const handleRatingChange = (value) => {
+		if (!user) {
+			navigate('/login');
+			toast.error('Please login to give ratings');
+			return;
+		}
 		setRating(value);
 	};
 
 	const handleComment = async (event) => {
+		if (!user) {
+			navigate('/login');
+			toast.error('Please login to post a comment');
+			return;
+		}
+
 		setLoading(true);
 		event.preventDefault();
 		const form = event.target;
@@ -170,6 +185,7 @@ const TourGuideDetails = () => {
 								className=" block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-green-300 focus:outline-none focus:ring focus:ring-green-300 disabled:opacity-30 disabled:cursor-not-allowed"
 								cols="30"
 								rows="10"
+								placeholder="Write a comment....."
 							></textarea>
 							<div className="mt-6">
 								<button
