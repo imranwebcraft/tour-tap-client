@@ -14,11 +14,11 @@ const Banner = () => {
 				<h1
 					data-aos="zoom-in"
 					data-aos-duration="1200"
-					className="text-white text-6xl font-bold tracking-wide max-w-5xl text-center"
+					className="text-white text-3xl md:text-5xl lg:text-6xl font-bold tracking-wide max-w-5xl text-center"
 				>
 					Welcome to Tour-Tap!
 				</h1>
-				<span className=" text-2xl font-black lg:text-6xl  bg-clip-text bg-gradient-to-tl from-green-500 to-sky-400 text-transparent">
+				<span className=" text-xl md:text-4xl font-black lg:text-6xl  bg-clip-text bg-gradient-to-tl from-green-500 to-sky-400 text-transparent">
 					<Typewriter
 						words={[animatedText]}
 						cursor
@@ -30,8 +30,8 @@ const Banner = () => {
 					/>
 				</span>
 
-				<div className="flex gap-2 items-center justify-center ">
-					<div className="flex -space-x-4">
+				<div className="flex flex-col lg:flex-row gap-2 items-center justify-center ">
+					<div className="flex -space-x-3">
 						<img
 							className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700"
 							src="https://source.unsplash.com/40x40/?portrait?1"

@@ -61,7 +61,7 @@ const Login = () => {
 							<Logo></Logo>
 						</div>
 
-						<p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
+						<p className="mt-3 text-3xl text-center font-semibold text-gray-800 dark:text-gray-200">
 							Welcome back!
 						</p>
 

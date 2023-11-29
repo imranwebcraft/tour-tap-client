@@ -2,7 +2,7 @@ const Weather = () => {
 	return (
 		<div className="mt-5">
 			{/* Weather */}
-			<div className="overflow-hidden rounded-lg shadow-lg dark:bg-gray-900 dark:text-gray-100">
+			<div className="overflow-hidden rounded-lg shadow-lg dark:bg-slate-800 dark:text-gray-100">
 				<div className="flex items-end justify-end h-48 p-4 dark:bg-gray-500 bg-center bg-cover weatherbg">
 					<p className="px-2 py-1 text-sm tracki text-white dark:text-gray-100 uppercase dark:bg-gray-800 bg-opacity-75 rounded shadow-lg">
 						SAJEK
@@ -66,15 +66,15 @@ const Weather = () => {
 					</div>
 				</div>
 				<div className="flex items-center justify-between gap-8 p-4 border-t dark:text-gray-400 dark:border-gray-700">
-					<div className="flex items-center space-x-1">
+					<div className="flex items-center space-x-1 dark:text-white">
 						<span className="font-bold">8</span>
-						<span className="text-sm">UV</span>
+						<span className="text-sm ">UV</span>
 					</div>
-					<div className="flex items-center space-x-1">
+					<div className="flex items-center space-x-1 dark:text-white">
 						<span className="font-bold">5%</span>
 						<span className="text-sm">Precip</span>
 					</div>
-					<div className="flex items-center space-x-1">
+					<div className="flex items-center space-x-1 dark:text-white">
 						<span className="font-bold">14°</span>
 						<span className="text-sm">Dew Point</span>
 					</div>

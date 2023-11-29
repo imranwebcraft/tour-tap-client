@@ -5,7 +5,7 @@ import newsLetter from '../../../../assets/images/newsletter.jpg';
 const NewsLetter = () => {
 	return (
 		<SectionContainer>
-			<div className="dark:bg-gray-800 bg-gray-200 py-16">
+			<div className="dark:bg-slate-800 bg-gray-200 py-16">
 				<div className="relative px-4 py-6 overflow-hidden sm:px-6 sm:py-8 lg:p-12 xl:p-16">
 					<h2 className="text-2xl font-semibold font-display text-black dark:text-white sm:text-3xl">
 						Unlock Travel Secrets: Sign Up for Our Newsletter

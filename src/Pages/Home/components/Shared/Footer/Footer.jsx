@@ -2,7 +2,7 @@ import Logo from '../../../../../Components/Logo';
 import Container from '../../../../../UI/Container';
 const Footer = () => {
 	return (
-		<footer className="relative z-10 bg-white border-t  pb-10 pt-20 dark:bg-slate-900 dark:text-white lg:pb-20">
+		<footer className="relative z-10 bg-white border-t pb-5 pt-10 dark:bg-slate-900 dark:text-white">
 			<Container>
 				<div className="-mx-4 flex flex-wrap">
 					<div className="w-full px-4 sm:w-2/3 lg:w-3/12">

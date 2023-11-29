@@ -7,7 +7,7 @@ const Steps = () => {
 					<div className="flex flex-col items-center mr-6">
 						<div className="w-px h-10 opacity-0 sm:h-full" />
 						<div>
-							<div className="flex items-center justify-center w-8 h-8 text-xs font-medium border rounded-full">
+							<div className=" dark:text-white flex items-center justify-center w-8 h-8 text-xs font-medium border rounded-full">
 								1
 							</div>
 						</div>
@@ -32,10 +32,10 @@ const Steps = () => {
 							</div>
 						</div>
 						<div>
-							<p className="text-xl font-semibold sm:text-base">
+							<p className=" dark:text-white text-xl font-semibold sm:text-base">
 								Discover Hidden Gems
 							</p>
-							<p className="text-sm text-gray-700">
+							<p className="text-sm text-gray-700 dark:text-white">
 								Uncover the lesser-known wonders of Place. Take a stroll through
 								charming neighborhoods, visit local markets, and connect with
 								the heart of the city.
@@ -47,7 +47,7 @@ const Steps = () => {
 					<div className="flex flex-col items-center mr-6">
 						<div className="w-px h-10 bg-gray-300 sm:h-full" />
 						<div>
-							<div className="flex items-center justify-center w-8 h-8 text-xs font-medium border rounded-full">
+							<div className="flex items-center justify-center w-8 h-8 text-xs font-medium border rounded-full dark:text-white">
 								2
 							</div>
 						</div>
@@ -72,10 +72,10 @@ const Steps = () => {
 							</div>
 						</div>
 						<div>
-							<p className="text-xl font-semibold sm:text-base">
+							<p className="text-xl font-semibold sm:text-base dark:text-white">
 								Plan Your Adventures
 							</p>
-							<p className="text-sm text-gray-700">
+							<p className="text-sm text-gray-700 dark:text-white">
 								Choose from a myriad of exciting activities based on your
 								interests. Whether you're an adventure seeker, history buff, or
 								foodie, there's something for everyone. Use our interactive map
@@ -88,7 +88,7 @@ const Steps = () => {
 					<div className="flex flex-col items-center mr-6">
 						<div className="w-px h-10 bg-gray-300 sm:h-full" />
 						<div>
-							<div className="flex items-center justify-center w-8 h-8 text-xs font-medium border rounded-full">
+							<div className="flex items-center justify-center w-8 h-8 text-xs font-medium border rounded-full dark:text-white">
 								3
 							</div>
 						</div>
@@ -113,10 +113,10 @@ const Steps = () => {
 							</div>
 						</div>
 						<div>
-							<p className="text-xl font-semibold sm:text-base">
+							<p className="text-xl font-semibold sm:text-base dark:text-white">
 								Immerse in Local Culture
 							</p>
-							<p className="text-sm text-gray-700">
+							<p className="text-sm text-gray-700 dark:text-white">
 								Immerse yourself in the rich cultural tapestry of [Your
 								Destination]. Attend local events, try authentic cuisine, and
 								engage with the warm and welcoming local community.
