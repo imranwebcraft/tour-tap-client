@@ -1,6 +1,5 @@
 import TopBanner from '../../Components/TopBanner/TopBanner';
 import Navbar from '../Home/components/Shared/Header/Navbar';
-import Gallery from './Gallery';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../Hook/useAxiosPublic';

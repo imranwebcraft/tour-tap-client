@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiAlertCircle } from 'react-icons/fi';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Modal = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -46,12 +47,13 @@ const SpringModal = ({ isOpen, setIsOpen }) => {
 							</h3>
 
 							<div className="flex gap-2">
-								<button
+								<Link
+									to={'/dashboard/booking'}
 									onClick={() => setIsOpen(false)}
 									className="bg-transparent hover:bg-white/10 transition-colors text-white font-semibold w-full py-2 rounded"
 								>
 									My Booking
-								</button>
+								</Link>
 								<button
 									type="submit"
 									onClick={() => {
