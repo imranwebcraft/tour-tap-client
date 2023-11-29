@@ -68,7 +68,7 @@ const MyAssignedTour = () => {
 							<table className="min-w-full">
 								<thead className="dark:bg-gray-700 bg-purple-500 text-white">
 									<tr className="text-center">
-										<th className="p-3">#</th>
+										<th className="p-3">Count</th>
 										<th className="p-3">Package Name</th>
 										<th className="p-3">Tourist Name</th>
 										<th className="p-3">Date</th>

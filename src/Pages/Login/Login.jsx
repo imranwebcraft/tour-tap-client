@@ -100,10 +100,7 @@ const Login = () => {
 									<label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
 										Password
 									</label>
-									<a
-										href="#"
-										className="text-xs text-gray-500 dark:text-gray-300 hover:underline"
-									>
+									<a className="text-xs text-gray-500 dark:text-gray-300 hover:underline">
 										Forget Password?
 									</a>
 								</div>

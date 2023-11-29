@@ -190,7 +190,7 @@ const AdminProfile = () => {
 					</div>
 					<div className="flex items-start my-2 md:m-0">
 						<div className="relative">
-							<a href="#" className="relative block">
+							<a className="relative block">
 								<img
 									alt="profil"
 									src={user.photoURL}

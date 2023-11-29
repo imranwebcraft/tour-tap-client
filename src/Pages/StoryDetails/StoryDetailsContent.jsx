@@ -11,10 +11,7 @@ const StoryDetailsContent = ({ story }) => {
 				className="h-96 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
 			/>
 			<header className="mb-4 flex gap-4 mt-4">
-				<a
-					href="#"
-					className="relative inline-flex h-12 w-12 items-center justify-center rounded-full text-white"
-				>
+				<a className="relative inline-flex h-12 w-12 items-center justify-center rounded-full text-white">
 					<img
 						src={story.authorImage}
 						alt="user name"

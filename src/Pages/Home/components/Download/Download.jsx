@@ -18,10 +18,7 @@ const Download = () => {
 						</p>
 
 						<div className="mt-6">
-							<a
-								href="#"
-								className="inline-flex items-center justify-center w-full px-4 py-2.5 overflow-hidden text-sm text-white transition-colors duration-300 bg-gray-900 rounded-lg shadow sm:w-auto sm:mx-2 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80"
-							>
+							<a className="inline-flex items-center justify-center w-full px-4 py-2.5 overflow-hidden text-sm text-white transition-colors duration-300 bg-gray-900 rounded-lg shadow sm:w-auto sm:mx-2 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
 								<svg
 									className="w-5 h-5 mx-2 fill-current"
 									xmlns="http://www.w3.org/2000/svg"
@@ -56,10 +53,7 @@ const Download = () => {
 								<span className="mx-2">Get it on the App Store</span>
 							</a>
 
-							<a
-								href="#"
-								className="inline-flex items-center justify-center w-full px-4 py-2.5 mt-4 overflow-hidden text-sm text-white transition-colors duration-300 bg-blue-600 rounded-lg shadow sm:w-auto sm:mx-2 sm:mt-0 hover:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80"
-							>
+							<a className="inline-flex items-center justify-center w-full px-4 py-2.5 mt-4 overflow-hidden text-sm text-white transition-colors duration-300 bg-blue-600 rounded-lg shadow sm:w-auto sm:mx-2 sm:mt-0 hover:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80">
 								<svg
 									className="w-5 h-5 mx-2 fill-current"
 									viewBox="-28 0 512 512.00075"

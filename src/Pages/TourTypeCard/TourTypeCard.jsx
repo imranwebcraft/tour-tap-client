@@ -1,6 +1,6 @@
 import TopBanner from '../../Components/TopBanner/TopBanner';
 import Navbar from '../Home/components/Shared/Header/Navbar';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../Hook/useAxiosPublic';
 import SectionContainer from '../../UI/SectionContainer';
@@ -9,6 +9,8 @@ import Container from '../../UI/Container';
 import PackageCard from '../Home/components/TravelGuide/OurPackage/PackageCard/PackageCard';
 import Lottie from 'lottie-react';
 import nothingfound from '../../assets/Animation/nothingfound.json';
+import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 const TourTypeCard = () => {
 	const { item } = useParams();
@@ -21,8 +23,17 @@ const TourTypeCard = () => {
 		},
 	});
 
+	const location = useLocation();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
+
 	return (
 		<div>
+			<Helmet>
+				<title>{item}</title>
+			</Helmet>
+
 			<Navbar route={'tourGuideDetails'} screen={false}>
 				<TopBanner bannerText={`${item} Package`}></TopBanner>
 			</Navbar>

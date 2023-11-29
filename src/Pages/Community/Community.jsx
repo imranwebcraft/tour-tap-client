@@ -351,10 +351,7 @@ const Community = () => {
 										className="hs-dropdown-menu w-56 transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden mb-1 z-10 bg-gray-900 shadow-md rounded-xl p-2 dark:bg-black"
 										aria-labelledby="blog-article-share-dropdown"
 									>
-										<a
-											className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400"
-											href="#"
-										>
+										<a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400">
 											<svg
 												className="flex-shrink-0 w-4 h-4"
 												xmlns="http://www.w3.org/2000/svg"
@@ -373,10 +370,7 @@ const Community = () => {
 											Copy link
 										</a>
 										<div className="border-t border-gray-600 my-2"></div>
-										<a
-											className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400"
-											href="#"
-										>
+										<a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400">
 											<svg
 												className="flex-shrink-0 w-4 h-4"
 												xmlns="http://www.w3.org/2000/svg"
@@ -389,10 +383,7 @@ const Community = () => {
 											</svg>
 											Share on Twitter
 										</a>
-										<a
-											className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400"
-											href="#"
-										>
+										<a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400">
 											<svg
 												className="flex-shrink-0 w-4 h-4"
 												xmlns="http://www.w3.org/2000/svg"
