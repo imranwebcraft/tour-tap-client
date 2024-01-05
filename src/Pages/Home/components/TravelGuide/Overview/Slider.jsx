@@ -30,16 +30,16 @@ const Slider = () => {
 				className="mySwiper"
 			>
 				<SwiperSlide>
-					<img className="  w-full h-[500px] rounded-lg" src={image1} alt="" />
+					<img className="  w-full h-[550px] rounded-lg" src={image1} alt="" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img className=" w-full h-[500px] rounded-lg " src={image2} alt="" />
+					<img className=" w-full h-[550px] rounded-lg " src={image2} alt="" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img className=" w-full h-[500px] rounded-lg " src={image3} alt="" />
+					<img className=" w-full h-[550px] rounded-lg " src={image3} alt="" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img className=" w-full h-[500px] rounded-lg " src={image4} alt="" />
+					<img className=" w-full h-[550px] rounded-lg " src={image4} alt="" />
 				</SwiperSlide>
 			</Swiper>
 		</div>
