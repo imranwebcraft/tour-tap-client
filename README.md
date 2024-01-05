@@ -2,6 +2,11 @@
 
 [Live Website](https://tour-tap.web.app)
 
+Admin Login Credential:
+
+- Email: imran@gmail.com
+- Password: aaaaaa
+
 ## Project Overview
 
 Tour-Tap is a web application catering to tourists, providing features for three different user roles: Admin, Tourist/Normal User, and TourGuide. Users can create accounts by clicking the sign-up button in the navbar, uploading their images via ImageBB. Firebase is employed for authentication.
