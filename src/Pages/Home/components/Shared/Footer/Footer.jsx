@@ -1,5 +1,5 @@
-import Logo from '../../../../../Components/Logo';
-import Container from '../../../../../UI/Container';
+import Logo from "../../../../../Components/Logo";
+import Container from "../../../../../UI/Container";
 const Footer = () => {
 	return (
 		<footer className="relative z-10 bg-white border-t pb-5 pt-10 dark:bg-slate-900 dark:text-white">
@@ -49,7 +49,7 @@ const Footer = () => {
 										</defs>
 									</svg>
 								</span>
-								<span>+012 (345) 678 99</span>
+								<span>+880 1995-276871</span>
 							</p>
 						</div>
 					</div>
@@ -121,7 +121,7 @@ const Footer = () => {
 								</a>
 							</div>
 							<p className="text-base text-body-color dark:text-dark-6">
-								&copy; 2023 Tour-Tap
+								&copy; {getCurrentYear()} Tour-Tap
 							</p>
 						</div>
 					</div>
@@ -215,4 +215,9 @@ const NavLink = ({ link, label }) => {
 			</a>
 		</li>
 	);
+};
+
+const getCurrentYear = () => {
+	const currentYear = new Date().getFullYear();
+	return currentYear;
 };

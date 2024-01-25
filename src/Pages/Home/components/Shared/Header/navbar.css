@@ -1,13 +1,14 @@
 .bg-image {
 	position: relative;
-	background-image: url('../../../../../assets/images/image5.jpg');
+	background-image: url("../../../../../assets/images/image5.jpg");
+	/* background-image: url("../../../../../assets/bannerVideoOne.mp4"); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 }
 
 .bg-image::before {
-	content: '';
+	content: "";
 	position: absolute;
 	inset: 0;
 	background: linear-gradient(
@@ -19,32 +20,32 @@
 
 /* Community page specific styles */
 .bg-image.community-page {
-	background-image: url('../../../../../assets/images/image6.jpg');
+	background-image: url("../../../../../assets/images/image6.jpg");
 }
 .bg-image.blog-page {
-	background-image: url('../../../../../assets/images/image4.jpg');
+	background-image: url("../../../../../assets/images/image4.jpg");
 }
 .bg-image.about-page {
-	background-image: url('../../../../../assets/images/about.jpg');
+	background-image: url("../../../../../assets/images/about.jpg");
 }
 .bg-image.contact-page {
-	background-image: url('../../../../../assets/images/image1.jpg');
+	background-image: url("../../../../../assets/images/image1.jpg");
 }
 .bg-image.login-page {
-	background-image: url('../../../../../assets/images/image1.jpg');
+	background-image: url("../../../../../assets/images/image1.jpg");
 }
 .bg-image.packages-page {
-	background-image: url('../../../../../assets/images/allPackage.jpg');
+	background-image: url("../../../../../assets/images/allPackage.jpg");
 }
 .bg-image.story-page {
-	background-image: url('../../../../../assets/images/story.jpg');
+	background-image: url("../../../../../assets/images/story.jpg");
 }
 .bg-image.packages-page {
-	background-image: url('../../../../../assets/images/packagedetails.jpg');
+	background-image: url("../../../../../assets/images/packagedetails.jpg");
 }
 .bg-image.story-details-page {
-	background-image: url('../../../../../assets/images/storydetails.jpg');
+	background-image: url("../../../../../assets/images/storydetails.jpg");
 }
 .bg-image.tourGuideDetails-page {
-	background-image: url('../../../../../assets/images/tourguidedetails.jpg');
+	background-image: url("../../../../../assets/images/tourguidedetails.jpg");
 }

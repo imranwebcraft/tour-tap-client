@@ -1,4 +1,4 @@
-import SectionContainer from '../../../../UI/SectionContainer';
+import SectionContainer from "../../../../UI/SectionContainer";
 
 const Download = () => {
 	return (
