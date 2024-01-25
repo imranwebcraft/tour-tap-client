@@ -1,8 +1,7 @@
-import Slider from './Slider';
-import Video from './Video';
-import Weather from './Weather';
-import './overview.css';
-import Steps from './steps';
+import Video from "./Video";
+import Weather from "./Weather";
+import "./overview.css";
+import Steps from "./steps";
 
 const Overview = () => {
 	return (
@@ -19,10 +18,8 @@ const Overview = () => {
 				{/* Weather */}
 				<Weather></Weather>
 			</div>
-			<div>
-				{/* Slider */}
-				<Slider></Slider>
-			</div>
+			{/* TODO: Just uncomment to show slider */}
+			<div>{/* <Slider></Slider> */}</div>
 		</div>
 	);
 };

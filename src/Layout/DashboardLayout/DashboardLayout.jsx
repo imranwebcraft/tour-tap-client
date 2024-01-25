@@ -23,6 +23,7 @@ const DashboardLayout = () => {
 
 	const navigate = useNavigate();
 	const [role] = useRole();
+	console.log("role", role);
 	useEffect(() => {
 		switch (role) {
 			case "admin":

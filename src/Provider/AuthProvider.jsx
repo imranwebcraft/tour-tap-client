@@ -6,11 +6,10 @@ import {
 	signInWithPopup,
 	signOut,
 	updateProfile,
-} from 'firebase/auth';
-import { createContext, useEffect } from 'react';
-import { useState } from 'react';
-import auth from '../Config/Firebase.config';
-import useAxiosPublic from '../Hook/useAxiosPublic';
+} from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import auth from "../Config/Firebase.config";
+import useAxiosPublic from "../Hook/useAxiosPublic";
 
 // -------CONTEXT--------//
 export const AuthContext = createContext(null);
@@ -59,20 +58,19 @@ const AuthProvider = ({ children }) => {
 	// ---------- OBSERVER -------//
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-			console.log('Observer', currentUser);
+			console.log("Observer", currentUser);
 			setLoading(true);
 			setUser(currentUser);
-			// TODO: Make set user false individually for every stage that will come later
 			if (currentUser) {
 				const user = { email: currentUser?.email };
-				axiosPublic.post('/jwt', user).then((res) => {
+				axiosPublic.post("/jwt", user).then((res) => {
 					if (res.data.token) {
-						localStorage.setItem('token', res.data.token);
+						localStorage.setItem("token", res.data.token);
 						setLoading(false);
 					}
 				});
 			} else {
-				localStorage.removeItem('token');
+				localStorage.removeItem("token");
 				setLoading(false);
 			}
 		});

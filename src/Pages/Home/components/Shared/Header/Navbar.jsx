@@ -229,7 +229,7 @@ const Navbar = ({ screen, children, route }) => {
 													Dashboard
 												</Link>
 												<Link className=" underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-green-500 transition-colors duration-300 transform  hover:border-green-500">
-													Offer Anniuncement
+													Offer Announcement
 												</Link>
 												<div className="bg-slate-950 px-4 py-3 rounded-md bg-opacity-20 backdrop-blur-xl space-y-1 hover:cursor-not-allowed">
 													<p>{user?.displayName}</p>
