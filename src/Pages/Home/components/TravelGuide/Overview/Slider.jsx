@@ -1,16 +1,15 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react'; // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper styles
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
-import image1 from '../../../../../assets/images/image1.jpg';
-import image2 from '../../../../../assets/images/image5.jpg';
-import image3 from '../../../../../assets/images/image3.jpg';
-import image4 from '../../../../../assets/images/image4.jpg';
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import image1 from "../../../../../assets/images/image1.jpg";
+import image3 from "../../../../../assets/images/image3.jpg";
+import image4 from "../../../../../assets/images/image4.jpg";
+import image2 from "../../../../../assets/images/image5.jpg";
 
 const Slider = () => {
 	return (

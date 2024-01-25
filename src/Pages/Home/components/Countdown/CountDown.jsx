@@ -1,8 +1,8 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 // NOTE: Change this date to whatever date you want to countdown to :)
-const COUNTDOWN_FROM = '01/20/2024';
+const COUNTDOWN_FROM = "02/20/2024";
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -69,10 +69,10 @@ const CountdownItem = ({ num, text }) => {
 				<AnimatePresence mode="popLayout">
 					<motion.span
 						key={num}
-						initial={{ y: '100%' }}
-						animate={{ y: '0%' }}
-						exit={{ y: '-100%' }}
-						transition={{ ease: 'backIn', duration: 0.75 }}
+						initial={{ y: "100%" }}
+						animate={{ y: "0%" }}
+						exit={{ y: "-100%" }}
+						transition={{ ease: "backIn", duration: 0.75 }}
 						className="block text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-black font-medium"
 					>
 						{num}

@@ -9,6 +9,9 @@ export default {
 				primary: "'Open Sans', sans-serif",
 				secondary: "'Yesteryear', cursive",
 			},
+			container: {
+				center: true,
+			},
 		},
 	},
 	plugins: [
