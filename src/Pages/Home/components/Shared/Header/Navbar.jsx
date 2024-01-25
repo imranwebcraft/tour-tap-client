@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -9,19 +9,18 @@ import Logo from "../../../../../Components/Logo";
 import useAuth from "../../../../../Hook/useAuth";
 import moon from "../../../../../assets/moon.svg";
 import sun from "../../../../../assets/sun.svg";
+import { ThemeContext } from "../../../../../context/ThemeContext";
 import "./navbar.css";
 
 const Navbar = ({ screen, children, route }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isToggleOpen, setIsToggleOpen] = useState(false);
 	const { user, logOut } = useAuth();
-
 	const navigate = useNavigate();
-
-	// Dark mode control
-	const [theme, setTheme] = useState("light");
+	const { theme, setTheme } = useContext(ThemeContext);
 	const html = document.documentElement;
 
+	// Dark mode control
 	const toggoleTheme = () => {
 		if (theme === "light") {
 			html.classList.remove("light");
@@ -35,12 +34,6 @@ const Navbar = ({ screen, children, route }) => {
 			localStorage.setItem("theme", "light");
 		}
 	};
-
-	useEffect(() => {
-		const currentTheme = localStorage.getItem("theme");
-		html.classList.add(currentTheme);
-		setTheme(currentTheme);
-	}, [html.classList]);
 
 	const [isScrolled, setIsScrolled] = useState(false);
 
@@ -57,7 +50,9 @@ const Navbar = ({ screen, children, route }) => {
 	const handleLogOut = () => {
 		logOut()
 			.then(() => {
-				toast.success("Logged out");
+				toast.success("Logged out", {
+					theme: `${theme === "light" ? "light" : "dark"}`,
+				});
 				navigate("/login");
 			})
 			.catch((err) => {

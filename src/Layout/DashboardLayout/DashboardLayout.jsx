@@ -1,20 +1,19 @@
-import Logo from '../../Components/Logo';
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import { BiSolidDashboard } from "react-icons/bi";
+import { FaRegHeart } from "react-icons/fa6";
+import { LuHome, LuPackagePlus, LuUsers2 } from "react-icons/lu";
+import { MdOutlineWorkOutline } from "react-icons/md";
+import { TbBrandBooking } from "react-icons/tb";
 import {
 	Link,
 	NavLink,
 	Outlet,
 	useLocation,
 	useNavigate,
-} from 'react-router-dom';
-import { LuHome, LuUsers2 } from 'react-icons/lu';
-import { LuPackagePlus } from 'react-icons/lu';
-import { TbBrandBooking } from 'react-icons/tb';
-import { FaRegHeart } from 'react-icons/fa6';
-import { MdOutlineWorkOutline } from 'react-icons/md';
-import useRole from '../../Hook/useRole';
-import { BiSolidDashboard } from 'react-icons/bi';
-import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+} from "react-router-dom";
+import Logo from "../../Components/Logo";
+import useRole from "../../Hook/useRole";
 
 const DashboardLayout = () => {
 	const location = useLocation();
@@ -26,14 +25,14 @@ const DashboardLayout = () => {
 	const [role] = useRole();
 	useEffect(() => {
 		switch (role) {
-			case 'admin':
-				navigate('/dashboard/admin-profile');
+			case "admin":
+				navigate("/dashboard/admin-profile");
 				break;
-			case 'tourist':
-				navigate('/dashboard/tourist-profile');
+			case "tourist":
+				navigate("/dashboard/tourist-profile");
 				break;
-			case 'tourGuide':
-				navigate('/dashboard/tourguide-profile');
+			case "tourGuide":
+				navigate("/dashboard/tourguide-profile");
 				break;
 			default:
 		}
@@ -55,7 +54,7 @@ const DashboardLayout = () => {
 					<div className="space-y-3">
 						{/* Logo */}
 						<Link
-							to={'/'}
+							to={"/"}
 							className=" flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 bg-green-500 p-5 rounded-md"
 						>
 							<Logo></Logo>
@@ -66,14 +65,14 @@ const DashboardLayout = () => {
 						<div className="flex-1">
 							<ul className="pt-2 pb-4 space-y-1 text-sm">
 								{/* ------- Admin Route SSSSTTTARRRTT */}
-								{role === 'admin' && (
+								{role === "admin" && (
 									<>
 										{/* Admin Profile */}
 										<li>
 											<NavLink
-												to={'/dashboard/admin-profile'}
+												to={"/dashboard/admin-profile"}
 												className={({ isActive }) =>
-													isActive ? 'text-green-500 font-semibold' : ''
+													isActive ? "text-green-500 font-semibold" : ""
 												}
 											>
 												<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 p-2">
@@ -84,13 +83,13 @@ const DashboardLayout = () => {
 										{/* Add Package */}
 										<li className=" rounded-md">
 											<NavLink
-												to={'/dashboard/add-package'}
+												to={"/dashboard/add-package"}
 												className={({ isActive }) =>
-													isActive ? 'text-green-500  font-medium' : ''
+													isActive ? "text-green-500  font-medium" : ""
 												}
 											>
 												<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
-													<LuPackagePlus className=" text-xl"></LuPackagePlus>{' '}
+													<LuPackagePlus className=" text-xl"></LuPackagePlus>{" "}
 													Add Package
 												</span>
 											</NavLink>
@@ -98,9 +97,9 @@ const DashboardLayout = () => {
 										{/* Manage Users */}
 										<li className=" rounded-md">
 											<NavLink
-												to={'/dashboard/users'}
+												to={"/dashboard/users"}
 												className={({ isActive }) =>
-													isActive ? 'text-green-500 font-medium' : ''
+													isActive ? "text-green-500 font-medium" : ""
 												}
 											>
 												<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -113,14 +112,14 @@ const DashboardLayout = () => {
 									</>
 								)}
 								{/* ------- Tourist Route Start */}
-								{role === 'tourist' && (
+								{role === "tourist" && (
 									<>
 										{/* Tourist Profile */}
 										<li className=" rounded-md">
 											<NavLink
-												to={'/dashboard/tourist-profile'}
+												to={"/dashboard/tourist-profile"}
 												className={({ isActive }) =>
-													isActive ? 'text-green-500  font-medium' : ''
+													isActive ? "text-green-500  font-medium" : ""
 												}
 											>
 												<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -131,13 +130,13 @@ const DashboardLayout = () => {
 										{/* My Bookings */}
 										<li className=" rounded-md">
 											<NavLink
-												to={'/dashboard/booking'}
+												to={"/dashboard/booking"}
 												className={({ isActive }) =>
-													isActive ? 'text-green-500  font-medium' : ''
+													isActive ? "text-green-500  font-medium" : ""
 												}
 											>
 												<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
-													<TbBrandBooking className=" text-xl"></TbBrandBooking>{' '}
+													<TbBrandBooking className=" text-xl"></TbBrandBooking>{" "}
 													My Bookings
 												</span>
 											</NavLink>
@@ -145,9 +144,9 @@ const DashboardLayout = () => {
 										{/* My Wishlist */}
 										<li className=" rounded-md">
 											<NavLink
-												to={'/dashboard/wishlist'}
+												to={"/dashboard/wishlist"}
 												className={({ isActive }) =>
-													isActive ? 'text-green-500  font-medium' : ''
+													isActive ? "text-green-500  font-medium" : ""
 												}
 											>
 												<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -160,14 +159,14 @@ const DashboardLayout = () => {
 									</>
 								)}
 								{/* Tour Guide Route START*/}
-								{role === 'tourGuide' && (
+								{role === "tourGuide" && (
 									<>
 										{/* Tour Guide PRofile */}
 										<li className="rounded-md">
 											<NavLink
-												to={'/dashboard/tourguide-profile'}
+												to={"/dashboard/tourguide-profile"}
 												className={({ isActive }) =>
-													isActive ? 'text-green-500  font-medium' : ''
+													isActive ? "text-green-500  font-medium" : ""
 												}
 											>
 												<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
@@ -177,9 +176,9 @@ const DashboardLayout = () => {
 										</li>
 										<li className="rounded-md">
 											<NavLink
-												to={'/dashboard/assign-tour'}
+												to={"/dashboard/assign-tour"}
 												className={({ isActive }) =>
-													isActive ? 'text-green-500  font-medium' : ''
+													isActive ? "text-green-500  font-medium" : ""
 												}
 											>
 												<span className=" flex items-center gap-2 text-base rounded transition-colors hover:bg-green-50 hover:text-green-500 focus:bg-green-50 aria-[current=page]:bg-green-50 aria-[current=page]:text-green-500 p-2">
